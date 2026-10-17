@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizzTech - Jasa Pembuatan Website, Landing Page & Layanan IT Profesional</title>
+    <title>WebCraft - Jasa Pembuatan Website & Landing Page Profesional</title>
     
-    <!-- Google Fonts: Poppins (Modern & Clean) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,11 +12,11 @@
     <style>
         /* ================= VARIABEL WARNA ================= */
         :root {
-            --primary: #0F172A;      /* Deep Navy (Profesional) */
-            --secondary: #2563EB;    /* Electric Blue (Tech) */
+            --primary: #0F172A;      /* Deep Navy */
+            --secondary: #2563EB;    /* Electric Blue */
             --secondary-hover: #1D4ED8;
-            --accent: #F59E0B;       /* Gold/Orange (Premium) */
-            --bg-light: #F8FAFC;     /* Slate Light */
+            --accent: #F59E0B;       /* Gold */
+            --bg-light: #F8FAFC;     
             --bg-white: #FFFFFF;
             --text-dark: #1E293B;
             --text-muted: #64748B;
@@ -51,31 +50,23 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
-        
         .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
         .logo span { color: var(--secondary); }
-
         nav ul { display: flex; list-style: none; gap: 30px; }
         nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 15px; transition: color 0.3s; }
         nav ul li a:hover { color: var(--secondary); }
-
         .btn-nav { background: var(--secondary); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
         .btn-nav:hover { background: var(--secondary-hover); transform: translateY(-2px); }
 
         /* ================= HERO SECTION ================= */
-        .hero {
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #F0F4FF 0%, #FFFFFF 100%);
-            text-align: center;
-        }
+        .hero { padding: 100px 20px; background: linear-gradient(135deg, #F0F4FF 0%, #FFFFFF 100%); text-align: center; }
         .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.2; color: var(--primary); margin-bottom: 20px; }
         .hero h1 span { color: var(--secondary); }
         .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
-        
         .hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .btn-primary { background: var(--secondary); color: white; padding: 16px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); }
         .btn-primary:hover { background: var(--secondary-hover); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3); }
-        .btn-outline { background: transparent; color: var(--primary); padding: 16px 36px; border-radius: 8px; text-decoration: none; font-ight: 600; font-size: 16px; border: 2px solid var(--primary); transition: 0.3s; }
+        .btn-outline { background: transparent; color: var(--primary); padding: 16px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; border: 2px solid var(--primary); transition: 0.3s; }
         .btn-outline:hover { background: var(--primary); color: white; }
 
         /* ================= LAYANAN ================= */
@@ -95,19 +86,104 @@
         .bg-primary { background: var(--primary); color: white; }
         .bg-primary .section-title h2 { color: white; }
         .bg-primary .section-title p { color: #94A3B8; }
-        
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
         .feature-item { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
         .feature-item h4 { color: var(--accent); font-size: 18px; margin-bottom: 10px; }
         .feature-item p { color: #CBD5E1; font-size: 14px; }
 
-        /* ================= PORTOFOLIO ================= */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .portfolio-card { border-radius: 16px; overflow: hidden; position: relative; height: 250px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .portfolio-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
-        .portfolio-card:hover img { transform: scale(1.05); }
-        .portfolio-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 20px; color: white; }
-        .portfolio-overlay h4 { font-size: 18px; font-weight: 600; }
+        /* ================= PORTOFOLIO (DESAIN BARU & ANIMASI) ================= */
+        .portfolio-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+        }
+        .portfolio-card { 
+            position: relative; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            height: 280px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            cursor: pointer;
+            background: #000; /* Fallback warna jika gambar loading */
+        }
+        .portfolio-card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            opacity: 0.9;
+        }
+        /* Animasi Zoom saat Hover */
+        .portfolio-card:hover img { 
+            transform: scale(1.15); 
+            opacity: 1;
+        }
+        /* Overlay Gradient */
+        .portfolio-overlay { 
+            position: absolute; 
+            inset: 0; 
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%); 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px; 
+            color: white; 
+        }
+        .portfolio-tag {
+            background: var(--secondary);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 50px;
+            align-self: flex-start;
+            margin-bottom: 10px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        .portfolio-title { 
+            font-size: 22px; 
+            font-weight: 700; 
+            margin-bottom: 5px;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+        .portfolio-desc {
+            font-size: 14px;
+            color: #CBD5E1;
+            margin-bottom: 15px;
+            transform: translateY(10px);
+            transition: all 0.4s ease 0.1s;
+        }
+        /* Tombol Muncul saat Hover */
+        .btn-view { 
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            align-self: flex-start;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease 0.2s;
+        }
+        .btn-view:hover { background: var(--secondary); color: white; }
+        
+        /* Memicu animasi saat di hover */
+        .portfolio-card:hover .portfolio-tag,
+        .portfolio-card:hover .portfolio-title,
+        .portfolio-card:hover .portfolio-desc {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .portfolio-card:hover .btn-view {
+            transform: translateY(0);
+            opacity: 1;
+        }
 
         /* ================= ALUR KERJA ================= */
         .step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
@@ -122,7 +198,6 @@
         .pricing-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
         .pricing-card.populer { border-color: var(--secondary); box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15); position: relative; }
         .badge-populer { background: var(--accent); color: var(--primary); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; }
-        
         .pricing-card h3 { font-size: 22px; color: var(--text-muted); font-weight: 600; margin-bottom: 15px; }
         .price { font-size: 42px; font-weight: 800; color: var(--primary); margin-bottom: 25px; }
         .price span { font-size: 16px; font-weight: 500; color: var(--text-muted); }
@@ -154,6 +229,11 @@
             .hero h1 { font-size: 36px; }
             .hero-buttons { flex-direction: column; }
             .pricing-card.populer { transform: scale(1); }
+            /* Di HP, portofolio langsung menampilkan teks tanpa nunggu hover */
+            .portfolio-tag, .portfolio-title, .portfolio-desc, .btn-view {
+                transform: translateY(0) !important;
+                opacity: 1 !important;
+            }
         }
     </style>
 </head>
@@ -163,7 +243,7 @@
     <nav>
         <div class="container">
             <a href="#" class="logo">
-                <span>◆</span> BizzTech.
+                <span>◆</span> WebCraft.
             </a>
             <ul>
                 <li><a href="#layanan">Layanan</a></li>
@@ -171,7 +251,7 @@
                 <li><a href="#harga">Harga</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="https://wa.me/6281225309301" class="btn-nav">Konsultasi Gratis</a>
+            <a href="https://wa.me/6281234567890" class="btn-nav">Konsultasi Gratis</a>
         </div>
     </nav>
 
@@ -179,7 +259,7 @@
     <section class="hero">
         <div class="container">
             <h1>Tingkatkan Bisnis Anda dengan <span>Website Profesional</span></h1>
-            <p>Kami merancang Landing Page dan Website modern serta layanan IT lainya yang berfokus pada konversi penjualan, kecepatan, dan desain memukau.</p>
+            <p>Kami merancang Landing Page dan Website modern yang berfokus pada konversi penjualan, kecepatan, dan desain memukau.</p>
             <div class="hero-buttons">
                 <a href="#harga" class="btn-primary">Lihat Paket Harga</a>
                 <a href="#portofolio" class="btn-outline">Lihat Portofolio</a>
@@ -218,7 +298,7 @@
     <section class="bg-primary">
         <div class="container">
             <div class="section-title">
-                <h2>Kenapa Memilih BizzTech?</h2>
+                <h2>Kenapa Memilih WebCraft?</h2>
                 <p>Kami tidak sekadar membuat website, kami membangun aset bisnis Anda.</p>
             </div>
             <div class="grid-4">
@@ -242,27 +322,48 @@
         </div>
     </section>
 
-    <!-- PORTOFOLIO -->
+    <!-- PORTOFOLIO (DENGAN ANIMASI HOVER) -->
     <section id="portofolio">
         <div class="container">
             <div class="section-title">
                 <h2>Portofolio Kami</h2>
-                <p>Beberapa project yang telah kami kerjakan</p>
+                <p>Beberapa project unggulan yang telah kami kerjakan</p>
             </div>
             <div class="portfolio-grid">
-                <!-- Menggunakan gambar dummy dari Unsplash agar tidak error -->
+                
+                <!-- Portofolio 1 -->
                 <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Landing Page Toko">
-                    <div class="portfolio-overlay"><h4>Landing Page Toko Batik</h4></div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Landing Page Toko Batik">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-tag">E-Commerce</span>
+                        <h4 class="portfolio-title">Toko Batik Nusantara</h4>
+                        <p class="portfolio-desc">Landing page penjualan batik premium dengan konversi tinggi.</p>
+                        <a href="#" class="btn-view">Lihat Detail</a>
+                    </div>
                 </div>
+
+                <!-- Portofolio 2 -->
                 <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Company Profile Startup">
-                    <div class="portfolio-overlay"><h4>Company Profile Startup</h4></div>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Company Profile Startup">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-tag">Company Profile</span>
+                        <h4 class="portfolio-title">Tech Startup Indonesia</h4>
+                        <p class="portfolio-desc">Website profil perusahaan teknologi dengan desain futuristik.</p>
+                        <a href="#" class="btn-view">Lihat Detail</a>
+                    </div>
                 </div>
+
+                <!-- Portofolio 3 -->
                 <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=600&auto=format&fit=crop" alt="Website Klinik">
-                    <div class="portfolio-overlay"><h4>Website Klinik Kecantikan</h4></div>
+                    <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=800&auto=format&fit=crop" alt="Website Klinik">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-tag">Healthcare</span>
+                        <h4 class="portfolio-title">Klinik Kecantikan Glow</h4>
+                        <p class="portfolio-desc">Sistem booking dokter dan profil klinik yang modern.</p>
+                        <a href="#" class="btn-view">Lihat Detail</a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -314,7 +415,7 @@
                         <li>Gratis Domain (.my.id) 1 Thn</li>
                         <li>Gratis Hosting 1 Thn</li>
                     </ul>
-                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20tertarik%20paket%20Landing%20Page" class="btn-pricing">Pilih Paket</a>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20Landing%20Page" class="btn-pricing">Pilih Paket</a>
                 </div>
 
                 <!-- Paket 2 (Populer) -->
@@ -330,7 +431,7 @@
                         <li>Gratis Hosting 1 Thn</li>
                         <li>Support 30 Hari</li>
                     </ul>
-                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20tertarik%20paket%20Company%20Profile" class="btn-pricing">Pilih Paket</a>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20Company%20Profile" class="btn-pricing">Pilih Paket</a>
                 </div>
 
                 <!-- Paket 3 -->
@@ -345,7 +446,7 @@
                         <li>Gratis Hosting 1 Thn</li>
                         <li>Support 60 Hari</li>
                     </ul>
-                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20tertarik%20paket%20Toko%20Online" class="btn-pricing">Pilih Paket</a>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20Toko%20Online" class="btn-pricing">Pilih Paket</a>
                 </div>
 
             </div>
@@ -370,7 +471,7 @@
                 </div>
                 <div class="faq-item">
                     <h4>Apakah ada biaya perpanjangan?</h4>
-                    <p>Tahun pertama Domain & Hosting GRATIS dari kami. Untuk tahun berikutnya, biaya perpanjangan domain + hosting mulai dari Rp 200.000/tahun (tergantung paket).</p>
+                    <p>Tahun pertama Domain & Hosting GRATIS dari kami. Untuk tahun berikutnya, biaya perpanjangan domain + hosting mulai dari Rp 200.000/tahun.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Bagaimana sistem pembayarannya?</h4>
@@ -383,15 +484,15 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 15px;">◆ BizzTech.</p>
-            <p>Solusi Pembuatan Website & Landing Page, Layanan IT Profesional.</p>
-            <p style="margin-top: 20px;">Hubungi: <a href="https://wa.me/6281225309301">WhatsApp Admin</a> | Email: Frendizone@gmail.com</p>
-            <p style="margin-top: 20px; font-size: 13px; color: #64748B;">&copy; 2026 BizzTech. All rights reserved.</p>
+            <p style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 15px;">◆ WebCraft.</p>
+            <p>Solusi Pembuatan Website & Landing Page Profesional.</p>
+            <p style="margin-top: 20px;">Hubungi: <a href="https://wa.me/6281234567890">WhatsApp Admin</a> | Email: hello@webcraft.com</p>
+            <p style="margin-top: 20px; font-size: 13px; color: #64748B;">&copy; 2024 WebCraft. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/6281225309301" class="float-wa" title="Hubungi Kami">💬</a>
+    <a href="https://wa.me/6281234567890" class="float-wa" title="Hubungi Kami">💬</a>
 
 </body>
 </html>
