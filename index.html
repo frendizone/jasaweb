@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCraft - Jasa Pembuatan Website & Landing Page Profesional</title>
+    <meta name="description" content="Jasa pembuatan website, landing page, dan toko online profesional. Desain modern, cepat, SEO friendly, dan bergaransi.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,16 +51,19 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
+        
         .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
         .logo span { color: var(--secondary); }
+
         nav ul { display: flex; list-style: none; gap: 30px; }
         nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 15px; transition: color 0.3s; }
         nav ul li a:hover { color: var(--secondary); }
-        .btn-nav { background: var(--secondary); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .btn-nav:hover { background: var(--secondary-hover); transform: translateY(-2px); }
+
+        .btn-nav { background: var(--secondary); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; white-space: nowrap; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2); }
+        .btn-nav:hover { background: var(--secondary-hover); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3); }
 
         /* ================= HERO SECTION ================= */
-        .hero { padding: 100px 20px; background: linear-gradient(135deg, #F0F4FF 0%, #FFFFFF 100%); text-align: center; }
+        .hero { padding: 100px 20px 80px; background: linear-gradient(135deg, #F0F4FF 0%, #FFFFFF 100%); text-align: center; }
         .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.2; color: var(--primary); margin-bottom: 20px; }
         .hero h1 span { color: var(--secondary); }
         .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
@@ -69,6 +73,18 @@
         .btn-outline { background: transparent; color: var(--primary); padding: 16px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; border: 2px solid var(--primary); transition: 0.3s; }
         .btn-outline:hover { background: var(--primary); color: white; }
 
+        /* ================= TRUST BAR (BARU) ================= */
+        .trust-bar { background: var(--bg-white); padding: 30px 0; border-bottom: 1px solid #E2E8F0; text-align: center; }
+        .trust-bar p { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .trust-logos { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.6; }
+        .trust-logos span { font-size: 20px; font-weight: 800; color: var(--primary); font-family: sans-serif; }
+
+        /* ================= STATISTIK (BARU) ================= */
+        .stats-section { background: var(--primary); padding: 40px 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
+        .stat-item h3 { font-size: 36px; font-weight: 800; color: var(--accent); margin-bottom: 5px; }
+        .stat-item p { color: #CBD5E1; font-size: 14px; font-weight: 500; }
+
         /* ================= LAYANAN ================= */
         section { padding: 80px 0; }
         .section-title { text-align: center; margin-bottom: 50px; }
@@ -76,8 +92,10 @@
         .section-title p { color: var(--text-muted); font-size: 16px; }
 
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--bg-white); padding: 40px 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: 0.3s; text-align: center; border: 1px solid #E2E8F0; }
+        .card { background: var(--bg-white); padding: 40px 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: 0.3s; text-align: center; border: 1px solid #E2E8F0; position: relative; overflow: hidden; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--secondary); }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--secondary); opacity: 0; transition: 0.3s; }
+        .card:hover::before { opacity: 1; }
         .card-icon { font-size: 40px; margin-bottom: 20px; }
         .card h3 { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
         .card p { color: var(--text-muted); font-size: 15px; }
@@ -91,99 +109,19 @@
         .feature-item h4 { color: var(--accent); font-size: 18px; margin-bottom: 10px; }
         .feature-item p { color: #CBD5E1; font-size: 14px; }
 
-        /* ================= PORTOFOLIO (DESAIN BARU & ANIMASI) ================= */
-        .portfolio-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; 
-        }
-        .portfolio-card { 
-            position: relative; 
-            border-radius: 16px; 
-            overflow: hidden; 
-            height: 280px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-            cursor: pointer;
-            background: #000; /* Fallback warna jika gambar loading */
-        }
-        .portfolio-card img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-            opacity: 0.9;
-        }
-        /* Animasi Zoom saat Hover */
-        .portfolio-card:hover img { 
-            transform: scale(1.15); 
-            opacity: 1;
-        }
-        /* Overlay Gradient */
-        .portfolio-overlay { 
-            position: absolute; 
-            inset: 0; 
-            background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%); 
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px; 
-            color: white; 
-        }
-        .portfolio-tag {
-            background: var(--secondary);
-            color: white;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 50px;
-            align-self: flex-start;
-            margin-bottom: 10px;
-            transform: translateY(10px);
-            opacity: 0;
-            transition: all 0.4s ease;
-        }
-        .portfolio-title { 
-            font-size: 22px; 
-            font-weight: 700; 
-            margin-bottom: 5px;
-            transform: translateY(10px);
-            transition: all 0.4s ease;
-        }
-        .portfolio-desc {
-            font-size: 14px;
-            color: #CBD5E1;
-            margin-bottom: 15px;
-            transform: translateY(10px);
-            transition: all 0.4s ease 0.1s;
-        }
-        /* Tombol Muncul saat Hover */
-        .btn-view { 
-            display: inline-block;
-            background: white;
-            color: var(--primary);
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            align-self: flex-start;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.4s ease 0.2s;
-        }
+        /* ================= PORTOFOLIO ================= */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .portfolio-card { position: relative; border-radius: 16px; overflow: hidden; height: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); cursor: pointer; background: #000; }
+        .portfolio-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); opacity: 0.9; }
+        .portfolio-card:hover img { transform: scale(1.15); opacity: 1; }
+        .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; color: white; }
+        .portfolio-tag { background: var(--secondary); color: white; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 50px; align-self: flex-start; margin-bottom: 10px; transform: translateY(10px); opacity: 0; transition: all 0.4s ease; }
+        .portfolio-title { font-size: 22px; font-weight: 700; margin-bottom: 5px; transform: translateY(10px); transition: all 0.4s ease; }
+        .portfolio-desc { font-size: 14px; color: #CBD5E1; margin-bottom: 15px; transform: translateY(10px); transition: all 0.4s ease 0.1s; }
+        .btn-view { display: inline-block; background: white; color: var(--primary); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; align-self: flex-start; transform: translateY(20px); opacity: 0; transition: all 0.4s ease 0.2s; }
         .btn-view:hover { background: var(--secondary); color: white; }
-        
-        /* Memicu animasi saat di hover */
-        .portfolio-card:hover .portfolio-tag,
-        .portfolio-card:hover .portfolio-title,
-        .portfolio-card:hover .portfolio-desc {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        .portfolio-card:hover .btn-view {
-            transform: translateY(0);
-            opacity: 1;
-        }
+        .portfolio-card:hover .portfolio-tag, .portfolio-card:hover .portfolio-title, .portfolio-card:hover .portfolio-desc { transform: translateY(0); opacity: 1; }
+        .portfolio-card:hover .btn-view { transform: translateY(0); opacity: 1; }
 
         /* ================= ALUR KERJA ================= */
         .step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
@@ -194,13 +132,14 @@
 
         /* ================= PRICELIST ================= */
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center; }
-        .pricing-card { background: var(--bg-white); padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 2px solid transparent; transition: 0.3s; }
+        .pricing-card { background: var(--bg-white); padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 2px solid transparent; transition: 0.3s; position: relative; }
         .pricing-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-        .pricing-card.populer { border-color: var(--secondary); box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15); position: relative; }
-        .badge-populer { background: var(--accent); color: var(--primary); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; }
+        .pricing-card.populer { border-color: var(--secondary); box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15); transform: scale(1.05); z-index: 10; }
+        .badge-populer { background: var(--accent); color: var(--primary); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
         .pricing-card h3 { font-size: 22px; color: var(--text-muted); font-weight: 600; margin-bottom: 15px; }
-        .price { font-size: 42px; font-weight: 800; color: var(--primary); margin-bottom: 25px; }
+        .price { font-size: 42px; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
         .price span { font-size: 16px; font-weight: 500; color: var(--text-muted); }
+        .price-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 25px; }
         .pricing-list { list-style: none; text-align: left; margin-bottom: 30px; border-top: 1px solid #E2E8F0; padding-top: 25px; }
         .pricing-list li { padding: 8px 0; font-size: 15px; color: var(--text-dark); display: flex; gap: 10px; }
         .pricing-list li::before { content: "✓"; color: var(--secondary); font-weight: bold; }
@@ -209,31 +148,61 @@
         .pricing-card.populer .btn-pricing { background: var(--secondary); color: white; }
         .pricing-card.populer .btn-pricing:hover { background: var(--secondary-hover); }
 
+        /* Garansi Badge di bawah Harga (BARU) */
+        .guarantee-badge { margin-top: 40px; display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--text-muted); font-size: 14px; background: #F1F5F9; padding: 15px; border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .guarantee-badge span { font-size: 24px; }
+
         /* ================= FAQ ================= */
         .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { background: var(--bg-white); border-radius: 12px; margin-bottom: 15px; padding: 20px 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #E2E8F0; }
-        .faq-item h4 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+        .faq-item { background: var(--bg-white); border-radius: 12px; margin-bottom: 15px; padding: 20px 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #E2E8F0; transition: 0.3s; cursor: pointer; }
+        .faq-item:hover { border-color: var(--secondary); box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1); }
+        .faq-item h4 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
         .faq-item p { color: var(--text-muted); font-size: 15px; }
 
         /* ================= FOOTER ================= */
-        footer { background: var(--primary); color: #94A3B8; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-        footer p { margin-bottom: 10px; }
-        footer a { color: var(--secondary); text-decoration: none; }
+        footer { background: var(--primary); color: #94A3B8; padding: 60px 20px 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+        .footer-col h4 { color: white; font-size: 18px; margin-bottom: 20px; }
+        .footer-col p, .footer-col a { display: block; color: #94A3B8; text-decoration: none; margin-bottom: 10px; font-size: 14px; transition: 0.3s; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
         
-        /* ================= FLOATING WHATSAPP ================= */
-        .float-wa { position: fixed; bottom: 30px; right: 30px; background: var(--wa-green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); text-decoration: none; z-index: 999; transition: transform 0.3s; }
-        .float-wa:hover { transform: scale(1.1); }
+        /* ================= FLOATING WHATSAPP + TEXT (BARU) ================= */
+        .float-wa { position: fixed; bottom: 30px; right: 30px; background: var(--wa-green); color: white; padding: 12px 20px; border-radius: 50px; display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); text-decoration: none; z-index: 999; transition: transform 0.3s; }
+        .float-wa:hover { transform: scale(1.05) translateY(-5px); }
+        .float-wa span { font-size: 24px; }
 
+        /* ================= BACK TO TOP (BARU) ================= */
+        .back-to-top { position: fixed; bottom: 30px; left: 30px; background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; text-decoration: none; z-index: 999; opacity: 0.7; transition: 0.3s; }
+        .back-to-top:hover { opacity: 1; transform: translateY(-5px); }
+
+        /* ================= RESPONSIVE (MOBILE) ================= */
         @media (max-width: 768px) {
+            .container { padding: 0 16px; }
             nav ul { display: none; }
-            .hero h1 { font-size: 36px; }
-            .hero-buttons { flex-direction: column; }
+            .btn-nav { padding: 8px 14px; font-size: 12px; border-radius: 6px; }
+            .logo { font-size: 20px; }
+            
+            .hero { padding: 60px 16px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 15px; }
+            .hero-buttons { flex-direction: column; gap: 10px; }
+            .btn-primary, .btn-outline { padding: 14px 20px; font-size: 14px; width: 100%; }
+            
+            .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+            
+            .section-title h2 { font-size: 28px; }
             .pricing-card.populer { transform: scale(1); }
-            /* Di HP, portofolio langsung menampilkan teks tanpa nunggu hover */
-            .portfolio-tag, .portfolio-title, .portfolio-desc, .btn-view {
-                transform: translateY(0) !important;
-                opacity: 1 !important;
-            }
+            
+            /* Portofolio Mobile */
+            .portfolio-tag, .portfolio-title, .portfolio-desc, .btn-view { transform: translateY(0) !important; opacity: 1 !important; }
+            
+            /* Floating WA Mobile */
+            .float-wa { padding: 10px; border-radius: 50%; bottom: 20px; right: 20px; }
+            .float-wa span { font-size: 28px; }
+            .float-wa .wa-text { display: none; } /* Sembunyikan teks di HP */
+            
+            .back-to-top { bottom: 20px; left: 20px; width: 40px; height: 40px; font-size: 18px; }
         }
     </style>
 </head>
@@ -266,6 +235,40 @@
             </div>
         </div>
     </section>
+
+    <!-- TRUST BAR (BARU) -->
+    <div class="trust-bar">
+        <div class="container">
+            <p>Dipercaya oleh 150+ Bisnis & Startup di Indonesia</p>
+            <div class="trust-logos">
+                <span>🏢 PT Maju Jaya</span>
+                <span>☕ Kopi Nusantara</span>
+                <span>🛒 TokoBatik.id</span>
+                <span>🚀 TechStartup</span>
+                <span>🏥 Klinik Sehat</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATISTIK (BARU) -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>150+</h3>
+                    <p>Project Selesai</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99%</h3>
+                    <p>Klien Puas</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5.0</h3>
+                    <p>Rating Google Review</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- LAYANAN -->
     <section id="layanan">
@@ -322,7 +325,7 @@
         </div>
     </section>
 
-    <!-- PORTOFOLIO (DENGAN ANIMASI HOVER) -->
+    <!-- PORTOFOLIO -->
     <section id="portofolio">
         <div class="container">
             <div class="section-title">
@@ -331,7 +334,6 @@
             </div>
             <div class="portfolio-grid">
                 
-                <!-- Portofolio 1 -->
                 <div class="portfolio-card">
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Landing Page Toko Batik">
                     <div class="portfolio-overlay">
@@ -342,7 +344,6 @@
                     </div>
                 </div>
 
-                <!-- Portofolio 2 -->
                 <div class="portfolio-card">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Company Profile Startup">
                     <div class="portfolio-overlay">
@@ -353,7 +354,6 @@
                     </div>
                 </div>
 
-                <!-- Portofolio 3 -->
                 <div class="portfolio-card">
                     <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=800&auto=format&fit=crop" alt="Website Klinik">
                     <div class="portfolio-overlay">
@@ -404,10 +404,10 @@
             </div>
             <div class="pricing-grid">
                 
-                <!-- Paket 1 -->
                 <div class="pricing-card">
                     <h3>Landing Page</h3>
                     <div class="price">Rp 500<span>rb</span></div>
+                    <p class="price-desc">Cocok untuk promosi produk tunggal</p>
                     <ul class="pricing-list">
                         <li>1 Halaman Fokus Penjualan</li>
                         <li>Desain Responsif (HP & PC)</li>
@@ -418,11 +418,11 @@
                     <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20Landing%20Page" class="btn-pricing">Pilih Paket</a>
                 </div>
 
-                <!-- Paket 2 (Populer) -->
                 <div class="pricing-card populer">
                     <div class="badge-populer">PALING LAKU</div>
                     <h3>Company Profile</h3>
                     <div class="price">Rp 1.5<span>jt</span></div>
+                    <p class="price-desc">Untuk kredibilitas bisnis & perusahaan</p>
                     <ul class="pricing-list">
                         <li>5 - 7 Halaman Lengkap</li>
                         <li>Desain Custom Premium</li>
@@ -434,10 +434,10 @@
                     <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20Company%20Profile" class="btn-pricing">Pilih Paket</a>
                 </div>
 
-                <!-- Paket 3 -->
                 <div class="pricing-card">
                     <h3>Toko Online</h3>
                     <div class="price">Rp 3.5<span>jt</span></div>
+                    <p class="price-desc">Sistem jualan online otomatis</p>
                     <ul class="pricing-list">
                         <li>Katalog & Keranjang Belanja</li>
                         <li>Integrasi Pembayaran Otomatis</li>
@@ -449,6 +449,12 @@
                     <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20Toko%20Online" class="btn-pricing">Pilih Paket</a>
                 </div>
 
+            </div>
+            
+            <!-- Garansi (BARU) -->
+            <div class="guarantee-badge">
+                <span>🛡️</span>
+                <div><strong>Garansi 100% Uang Kembali</strong> jika kami tidak menyelesaikan website sesuai kesepakatan awal.</div>
             </div>
         </div>
     </section>
@@ -462,37 +468,59 @@
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <h4>Berapa lama proses pembuatan website?</h4>
+                    <h4>Berapa lama proses pembuatan website? <span>+</span></h4>
                     <p>Untuk Landing Page biasanya 2-3 hari kerja. Untuk Company Profile & Toko Online membutuhkan waktu sekitar 7-14 hari kerja tergantung kompleksitas.</p>
                 </div>
                 <div class="faq-item">
-                    <h4>Apakah saya bisa request desain sendiri?</h4>
+                    <h4>Apakah saya bisa request desain sendiri? <span>+</span></h4>
                     <p>Tentu! Kami menyediakan layanan desain custom. Anda bisa memberikan referensi website yang Anda sukai, dan kami akan menyesuaikannya.</p>
                 </div>
                 <div class="faq-item">
-                    <h4>Apakah ada biaya perpanjangan?</h4>
+                    <h4>Apakah ada biaya perpanjangan? <span>+</span></h4>
                     <p>Tahun pertama Domain & Hosting GRATIS dari kami. Untuk tahun berikutnya, biaya perpanjangan domain + hosting mulai dari Rp 200.000/tahun.</p>
                 </div>
                 <div class="faq-item">
-                    <h4>Bagaimana sistem pembayarannya?</h4>
+                    <h4>Bagaimana sistem pembayarannya? <span>+</span></h4>
                     <p>Pembayaran dilakukan 2 tahap: DP 50% saat sepakat, dan pelunasan 50% saat website selesai dan siap di-hosting.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (DIPERBARUI) -->
     <footer>
-        <div class="container">
-            <p style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 15px;">◆ WebCraft.</p>
-            <p>Solusi Pembuatan Website & Landing Page Profesional.</p>
-            <p style="margin-top: 20px;">Hubungi: <a href="https://wa.me/6281234567890">WhatsApp Admin</a> | Email: hello@webcraft.com</p>
-            <p style="margin-top: 20px; font-size: 13px; color: #64748B;">&copy; 2024 WebCraft. All rights reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>◆ WebCraft.</h4>
+                <p>Agensi digital yang berfokus pada pembuatan website, landing page, dan solusi e-commerce untuk pertumbuhan bisnis Anda.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan</h4>
+                <a href="#">Landing Page</a>
+                <a href="#">Company Profile</a>
+                <a href="#">Toko Online</a>
+                <a href="#">Maintenance Website</a>
+            </div>
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <a href="https://wa.me/6281234567890">WhatsApp: 0812-3456-7890</a>
+                <a href="mailto:hello@webcraft.com">Email: hello@webcraft.com</a>
+                <p>Jakarta, Indonesia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WebCraft. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/6281234567890" class="float-wa" title="Hubungi Kami">💬</a>
+    <!-- FLOATING WHATSAPP DENGAN TEKS (BARU) -->
+    <a href="https://wa.me/6281234567890" class="float-wa" title="Hubungi Kami">
+        <span>💬</span>
+        <div class="wa-text">Butuh Bantuan?</div>
+    </a>
+
+    <!-- BACK TO TOP (BARU) -->
+    <a href="#" class="back-to-top" title="Kembali ke Atas">↑</a>
 
 </body>
 </html>
