@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCraft - Jasa Pembuatan Website & Landing Page Profesional</title>
+    
+    <!-- Google Fonts: Poppins (Modern & Clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================= VARIABEL WARNA ================= */
+        :root {
+            --primary: #0F172A;      /* Deep Navy (Profesional) */
+            --secondary: #2563EB;    /* Electric Blue (Tech) */
+            --secondary-hover: #1D4ED8;
+            --accent: #F59E0B;       /* Gold/Orange (Premium) */
+            --bg-light: #F8FAFC;     /* Slate Light */
+            --bg-white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --wa-green: #25D366;
+            --font-main: 'Poppins', sans-serif;
+        }
+
+        /* ================= RESET & BASE ================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ================= NAVBAR ================= */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--secondary); }
+
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 15px; transition: color 0.3s; }
+        nav ul li a:hover { color: var(--secondary); }
+
+        .btn-nav { background: var(--secondary); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .btn-nav:hover { background: var(--secondary-hover); transform: translateY(-2px); }
+
+        /* ================= HERO SECTION ================= */
+        .hero {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #F0F4FF 0%, #FFFFFF 100%);
+            text-align: center;
+        }
+        .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.2; color: var(--primary); margin-bottom: 20px; }
+        .hero h1 span { color: var(--secondary); }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+        
+        .hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-primary { background: var(--secondary); color: white; padding: 16px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); }
+        .btn-primary:hover { background: var(--secondary-hover); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3); }
+        .btn-outline { background: transparent; color: var(--primary); padding: 16px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; border: 2px solid var(--primary); transition: 0.3s; }
+        .btn-outline:hover { background: var(--primary); color: white; }
+
+        /* ================= LAYANAN ================= */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 36px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+        .section-title p { color: var(--text-muted); font-size: 16px; }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--bg-white); padding: 40px 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: 0.3s; text-align: center; border: 1px solid #E2E8F0; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--secondary); }
+        .card-icon { font-size: 40px; margin-bottom: 20px; }
+        .card h3 { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
+        .card p { color: var(--text-muted); font-size: 15px; }
+
+        /* ================= KENAPA KAMI ================= */
+        .bg-primary { background: var(--primary); color: white; }
+        .bg-primary .section-title h2 { color: white; }
+        .bg-primary .section-title p { color: #94A3B8; }
+        
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .feature-item { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+        .feature-item h4 { color: var(--accent); font-size: 18px; margin-bottom: 10px; }
+        .feature-item p { color: #CBD5E1; font-size: 14px; }
+
+        /* ================= PORTOFOLIO ================= */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .portfolio-card { border-radius: 16px; overflow: hidden; position: relative; height: 250px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .portfolio-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+        .portfolio-card:hover img { transform: scale(1.05); }
+        .portfolio-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 20px; color: white; }
+        .portfolio-overlay h4 { font-size: 18px; font-weight: 600; }
+
+        /* ================= ALUR KERJA ================= */
+        .step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
+        .step-item { position: relative; padding: 20px; }
+        .step-number { width: 50px; height: 50px; background: var(--secondary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; margin: 0 auto 15px; }
+        .step-item h4 { font-size: 18px; color: var(--primary); margin-bottom: 8px; }
+        .step-item p { font-size: 14px; color: var(--text-muted); }
+
+        /* ================= PRICELIST ================= */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center; }
+        .pricing-card { background: var(--bg-white); padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 2px solid transparent; transition: 0.3s; }
+        .pricing-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
+        .pricing-card.populer { border-color: var(--secondary); box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15); position: relative; }
+        .badge-populer { background: var(--accent); color: var(--primary); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; }
+        
+        .pricing-card h3 { font-size: 22px; color: var(--text-muted); font-weight: 600; margin-bottom: 15px; }
+        .price { font-size: 42px; font-weight: 800; color: var(--primary); margin-bottom: 25px; }
+        .price span { font-size: 16px; font-weight: 500; color: var(--text-muted); }
+        .pricing-list { list-style: none; text-align: left; margin-bottom: 30px; border-top: 1px solid #E2E8F0; padding-top: 25px; }
+        .pricing-list li { padding: 8px 0; font-size: 15px; color: var(--text-dark); display: flex; gap: 10px; }
+        .pricing-list li::before { content: "✓"; color: var(--secondary); font-weight: bold; }
+        .btn-pricing { display: block; width: 100%; padding: 14px; background: #E2E8F0; color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 700; transition: 0.3s; }
+        .btn-pricing:hover { background: var(--primary); color: white; }
+        .pricing-card.populer .btn-pricing { background: var(--secondary); color: white; }
+        .pricing-card.populer .btn-pricing:hover { background: var(--secondary-hover); }
+
+        /* ================= FAQ ================= */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--bg-white); border-radius: 12px; margin-bottom: 15px; padding: 20px 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #E2E8F0; }
+        .faq-item h4 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+        .faq-item p { color: var(--text-muted); font-size: 15px; }
+
+        /* ================= FOOTER ================= */
+        footer { background: var(--primary); color: #94A3B8; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer p { margin-bottom: 10px; }
+        footer a { color: var(--secondary); text-decoration: none; }
+        
+        /* ================= FLOATING WHATSAPP ================= */
+        .float-wa { position: fixed; bottom: 30px; right: 30px; background: var(--wa-green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); text-decoration: none; z-index: 999; transition: transform 0.3s; }
+        .float-wa:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 36px; }
+            .hero-buttons { flex-direction: column; }
+            .pricing-card.populer { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <span>◆</span> WebCraft.
+            </a>
+            <ul>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#harga">Harga</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="https://wa.me/6281234567890" class="btn-nav">Konsultasi Gratis</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Tingkatkan Bisnis Anda dengan <span>Website Profesional</span></h1>
+            <p>Kami merancang Landing Page dan Website modern yang berfokus pada konversi penjualan, kecepatan, dan desain memukau.</p>
+            <div class="hero-buttons">
+                <a href="#harga" class="btn-primary">Lihat Paket Harga</a>
+                <a href="#portofolio" class="btn-outline">Lihat Portofolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN -->
+    <section id="layanan">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+                <p>Solusi digital lengkap untuk kebutuhan bisnis Anda</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Landing Page</h3>
+                    <p>Halaman khusus untuk promosi produk/jasa. Dirancang agar pengunjung langsung melakukan pembelian atau menghubungi Anda.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏢</div>
+                    <h3>Company Profile</h3>
+                    <p>Website profil perusahaan untuk membangun kredibilitas, menampilkan layanan, visi-misi, dan portofolio bisnis Anda.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛒</div>
+                    <h3>Toko Online</h3>
+                    <p>Sistem e-commerce dengan katalog produk, keranjang belanja, dan integrasi pembayaran otomatis untuk jualan online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KENAPA KAMI -->
+    <section class="bg-primary">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kenapa Memilih WebCraft?</h2>
+                <p>Kami tidak sekadar membuat website, kami membangun aset bisnis Anda.</p>
+            </div>
+            <div class="grid-4">
+                <div class="feature-item">
+                    <h4>⚡ Super Cepat</h4>
+                    <p>Website dioptimalkan agar loading di bawah 3 detik, meningkatkan pengalaman pengguna.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📱 Responsif</h4>
+                    <p>Tampilan sempurna di semua perangkat, mulai dari HP, tablet, hingga desktop.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔍 SEO Friendly</h4>
+                    <p>Struktur kode bersih yang memudahkan website Anda muncul di halaman pertama Google.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🛡️ Garansi Support</h4>
+                    <p>Bebas revisi desain dan dukungan teknis (support) gratis selama 30 hari setelah launching.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTOFOLIO -->
+    <section id="portofolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portofolio Kami</h2>
+                <p>Beberapa project yang telah kami kerjakan</p>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Menggunakan gambar dummy dari Unsplash agar tidak error -->
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" alt="Landing Page Toko">
+                    <div class="portfolio-overlay"><h4>Landing Page Toko Batik</h4></div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Company Profile Startup">
+                    <div class="portfolio-overlay"><h4>Company Profile Startup</h4></div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=600&auto=format&fit=crop" alt="Website Klinik">
+                    <div class="portfolio-overlay"><h4>Website Klinik Kecantikan</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALUR KERJA -->
+    <section style="background: var(--bg-white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Alur Kerja Sederhana</h2>
+                <p>Hanya butuh 3 langkah mudah untuk website Anda live!</p>
+            </div>
+            <div class="step-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Konsultasi</h4>
+                    <p>Diskusikan kebutuhan bisnis dan referensi desain yang Anda inginkan secara gratis.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Proses Desain</h4>
+                    <p>Kami membuat website sesuai kesepakatan dalam waktu 3-7 hari kerja.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Launching</h4>
+                    <p>Website siap diakses publik setelah Anda menyetujui hasil akhirnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HARGA -->
+    <section id="harga">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pilihan Paket Harga</h2>
+                <p>Investasi terbaik untuk pertumbuhan bisnis Anda</p>
+            </div>
+            <div class="pricing-grid">
+                
+                <!-- Paket 1 -->
+                <div class="pricing-card">
+                    <h3>Landing Page</h3>
+                    <div class="price">Rp 500<span>rb</span></div>
+                    <ul class="pricing-list">
+                        <li>1 Halaman Fokus Penjualan</li>
+                        <li>Desain Responsif (HP & PC)</li>
+                        <li>Tombol Direct WhatsApp</li>
+                        <li>Gratis Domain (.my.id) 1 Thn</li>
+                        <li>Gratis Hosting 1 Thn</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20Landing%20Page" class="btn-pricing">Pilih Paket</a>
+                </div>
+
+                <!-- Paket 2 (Populer) -->
+                <div class="pricing-card populer">
+                    <div class="badge-populer">PALING LAKU</div>
+                    <h3>Company Profile</h3>
+                    <div class="price">Rp 1.5<span>jt</span></div>
+                    <ul class="pricing-list">
+                        <li>5 - 7 Halaman Lengkap</li>
+                        <li>Desain Custom Premium</li>
+                        <li>Optimasi SEO Google</li>
+                        <li>Gratis Domain (.com) 1 Thn</li>
+                        <li>Gratis Hosting 1 Thn</li>
+                        <li>Support 30 Hari</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20Company%20Profile" class="btn-pricing">Pilih Paket</a>
+                </div>
+
+                <!-- Paket 3 -->
+                <div class="pricing-card">
+                    <h3>Toko Online</h3>
+                    <div class="price">Rp 3.5<span>jt</span></div>
+                    <ul class="pricing-list">
+                        <li>Katalog & Keranjang Belanja</li>
+                        <li>Integrasi Pembayaran Otomatis</li>
+                        <li>Manajemen Stok Admin</li>
+                        <li>Gratis Domain (.com) 1 Thn</li>
+                        <li>Gratis Hosting 1 Thn</li>
+                        <li>Support 60 Hari</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20paket%20Toko%20Online" class="btn-pricing">Pilih Paket</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" style="background: var(--bg-white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pertanyaan Umum (FAQ)</h2>
+                <p>Masih ragu? Temukan jawabannya di sini.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>Berapa lama proses pembuatan website?</h4>
+                    <p>Untuk Landing Page biasanya 2-3 hari kerja. Untuk Company Profile & Toko Online membutuhkan waktu sekitar 7-14 hari kerja tergantung kompleksitas.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Apakah saya bisa request desain sendiri?</h4>
+                    <p>Tentu! Kami menyediakan layanan desain custom. Anda bisa memberikan referensi website yang Anda sukai, dan kami akan menyesuaikannya.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Apakah ada biaya perpanjangan?</h4>
+                    <p>Tahun pertama Domain & Hosting GRATIS dari kami. Untuk tahun berikutnya, biaya perpanjangan domain + hosting mulai dari Rp 200.000/tahun (tergantung paket).</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Bagaimana sistem pembayarannya?</h4>
+                    <p>Pembayaran dilakukan 2 tahap: DP 50% saat sepakat, dan pelunasan 50% saat website selesai dan siap di-hosting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p style="font-size: 24px; font-weight: 800; color: white; margin-bottom: 15px;">◆ WebCraft.</p>
+            <p>Solusi Pembuatan Website & Landing Page Profesional.</p>
+            <p style="margin-top: 20px;">Hubungi: <a href="https://wa.me/6281234567890">WhatsApp Admin</a> | Email: hello@webcraft.com</p>
+            <p style="margin-top: 20px; font-size: 13px; color: #64748B;">&copy; 2024 WebCraft. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/6281234567890" class="float-wa" title="Hubungi Kami">💬</a>
+
+</body>
+</html>
