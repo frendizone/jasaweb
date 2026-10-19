@@ -5,25 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation - Aliyah & Yuangga</title>
     
-    <!-- Font Import -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --gold: #C09B38; /* Warna emas sesuai gambar */
+            --gold: #C09B38; 
+            --gold-light: #D4AF37;
+            --gold-dark: #9E7B22;
             --text-dark: #333333;
             --text-light: #666666;
+            --bg-white: #FDFBF7;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: #EAE7DF; /* Warna background luar */
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             display: flex;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             overflow-x: hidden;
         }
 
@@ -32,7 +37,7 @@
             width: 100%;
             max-width: 480px;
             min-height: 100vh;
-            background-color: #FFFFFF;
+            background-color: var(--bg-white);
             position: relative;
             overflow: hidden;
             box-shadow: 0 0 30px rgba(0,0,0,0.1);
@@ -44,28 +49,49 @@
             to { opacity: 1; }
         }
 
-        /* ================= ORNAMEN POJOK ATAS ================= */
+        /* ================= BUNGA POJOK ATAS (CSS ORNAMENT) ================= */
         .top-ornament {
             position: absolute;
-            top: -5%;
-            left: 0;
-            width: 100%;
-            z-index: 10;
+            top: 0; left: 0; width: 100%; height: 200px;
             pointer-events: none;
+            z-index: 5;
+            background: 
+                radial-gradient(ellipse at 0% 0%, rgba(139,154,130,0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 100% 0%, rgba(139,154,130,0.3) 0%, transparent 50%);
+        }
+        
+        /* Bunga kiri atas */
+        .top-ornament::before {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px;
+            width: 150px; height: 150px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23f4f1ea" opacity="0.8"/><circle cx="60" cy="40" r="30" fill="%23e8e2d5" opacity="0.9"/><path d="M50 10 Q80 30 70 60 Q40 80 20 50 Q10 20 50 10" fill="%238a9a85" opacity="0.5"/></svg>');
+            background-size: cover;
+        }
+        
+        /* Bunga kanan atas */
+        .top-ornament::after {
+            content: '';
+            position: absolute;
+            top: -20px; right: -20px;
+            width: 150px; height: 150px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23f4f1ea" opacity="0.8"/><circle cx="40" cy="60" r="30" fill="%23e8e2d5" opacity="0.9"/><path d="M50 10 Q20 30 30 60 Q60 80 80 50 Q90 20 50 10" fill="%23a09b8a" opacity="0.5"/></svg>');
+            background-size: cover;
         }
 
         /* ================= GARIS LENGKUNG (ARCH) ================= */
         .arch-border {
             position: absolute;
-            top: 10%;
+            top: 12%;
             left: 50%;
             transform: translateX(-50%);
-            width: 85%;
-            height: 70%;
-            border: 2px solid var(--gold);
+            width: 82%;
+            height: 65%;
+            border: 1.5px solid var(--gold-light);
             border-radius: 250px 250px 0 0; /* Membuat bentuk lengkung */
             z-index: 1;
-            opacity: 0.8;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
         }
 
         /* ================= KONTEN TEKS ================= */
@@ -73,16 +99,17 @@
             position: relative;
             z-index: 20;
             text-align: center;
-            padding: 80px 30px 400px 30px; /* Padding bawah besar untuk area bunga */
+            padding: 100px 30px 320px 30px; 
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Bismillah / Logo */
+        /* Kaligrafi Bismillah (SVG Emas) */
         .bismillah {
-            width: 80px;
-            margin-bottom: 50px;
+            width: 70px;
+            margin-bottom: 40px;
+            fill: var(--gold);
             opacity: 0;
             animation: slideDown 1s ease forwards 0.3s;
         }
@@ -94,11 +121,11 @@
 
         .together {
             font-size: 11px;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             color: var(--text-light);
             text-transform: uppercase;
-            margin-bottom: 30px;
-            font-weight: 400;
+            margin-bottom: 35px;
+            font-weight: 500;
             opacity: 0;
             animation: fadeIn 1s ease forwards 0.6s;
         }
@@ -130,7 +157,7 @@
 
         .and::before, .and::after {
             content: "";
-            width: 40px;
+            width: 50px;
             height: 1px;
             background-color: var(--gold);
         }
@@ -153,12 +180,13 @@
 
         .wedding-text {
             font-family: 'Great Vibes', cursive;
-            font-size: 65px;
+            font-size: 70px;
             color: var(--gold);
             margin: 10px 0;
             line-height: 1;
             opacity: 0;
             animation: zoomIn 1.2s ease forwards 1.8s;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
 
         @keyframes zoomIn {
@@ -172,6 +200,7 @@
             color: var(--text-dark);
             text-transform: uppercase;
             line-height: 1.4;
+            font-weight: 500;
             opacity: 0;
             animation: fadeIn 1s ease forwards 2.1s;
         }
@@ -186,66 +215,72 @@
             pointer-events: none;
         }
 
-        /* Animasi Gapura Mengembang (Breathing) */
-        .gapura-left, .gapura-right {
+        /* Gapura Emas Kiri & Kanan (SVG dengan Animasi) */
+        .gapura {
             position: absolute;
             bottom: 0;
-            width: 45%;
+            width: 55%;
             animation: floatGapura 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(192, 155, 56, 0.3));
         }
 
         .gapura-left {
-            left: -5%;
+            left: -10%;
             transform-origin: bottom left;
+            fill: var(--gold);
         }
 
         .gapura-right {
-            right: -5%;
+            right: -10%;
             transform-origin: bottom right;
+            fill: var(--gold);
+            transform: scaleX(-1); /* Mirror efek untuk sisi kanan */
         }
 
         @keyframes floatGapura {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.03) rotate(1deg); }
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.02) translateY(-5px); }
         }
 
+        /* Bunga Bawah */
         .flowers-bottom {
             position: absolute;
             bottom: -20px;
             left: 0;
             width: 100%;
             z-index: 20;
+            height: 180px;
+            background: 
+                radial-gradient(ellipse at 30% 100%, rgba(244, 241, 234, 1) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 100%, rgba(244, 241, 234, 1) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 100%, rgba(232, 226, 213, 1) 0%, transparent 70%);
+        }
+        
+        /* Bunga mawar CSS */
+        .rose-1, .rose-2, .rose-3 {
+            position: absolute;
+            background: radial-gradient(circle, #fff 0%, #fdfbf7 40%, #e8e2d5 100%);
+            border-radius: 50%;
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.05), 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .rose-1 { width: 120px; height: 120px; bottom: -20px; left: 10%; }
+        .rose-2 { width: 100px; height: 100px; bottom: -10px; right: 15%; }
+        .rose-3 { width: 80px; height: 80px; bottom: 20px; left: 45%; transform: translateX(-50%); }
+
+        /* Daun Hijau */
+        .leaf {
+            position: absolute;
+            background: #8a9a85;
+            border-radius: 0 50% 0 50%;
+            opacity: 0.8;
         }
 
-        /* ================= TOMBOL & ANIMASI TAMBAHAN ================= */
-        .btn-open {
-            margin-top: 30px;
-            background-color: var(--gold);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(192, 155, 56, 0.4);
-            transition: all 0.3s ease;
-            z-index: 30;
-            position: relative;
-        }
-
-        .btn-open:hover {
-            background-color: #a8852f;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(192, 155, 56, 0.6);
-        }
-
-        /* Efek Bunga Jatuh */
+        /* ================= EFEK KELOPAK BUNGA JATUH ================= */
         .petal {
             position: absolute;
             top: -20px;
-            background-color: #fff0f0;
+            background-color: #fdfbf7;
             border-radius: 50% 0 50% 50%;
             box-shadow: inset 0 0 5px rgba(192, 155, 56, 0.2);
             pointer-events: none;
@@ -265,15 +300,17 @@
 
     <div class="invitation-container">
         
-        <!-- Ornamen Pojok Atas (Ganti src dengan gambar bunga Anda) -->
-        <img src="https://i.ibb.co/3s6yH4v/top-floral.png" alt="Top Floral" class="top-ornament" style="opacity: 0.9;">
+        <!-- Ornamen Bunga Pojok Atas -->
+        <div class="top-ornament"></div>
 
         <!-- Garis Emas Melengkung -->
         <div class="arch-border"></div>
 
         <div class="content">
-            <!-- Logo Bismillah (Ganti src jika perlu) -->
-            <img src="https://i.ibb.co/6PZq6Z2/bismillah-gold.png" alt="Bismillah" class="bismillah">
+            <!-- Kaligrafi Bismillah (SVG) -->
+            <svg class="bismillah" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 20 Q45 10 50 20 Q55 10 60 20 Q65 15 70 25 Q75 15 80 20 Q85 10 90 20 Q85 35 75 30 Q65 40 55 30 Q45 40 35 30 Q25 35 20 20 Q25 10 30 20 Q35 15 40 20 Z M50 25 Q50 45 50 45 M40 30 Q50 40 60 30 M30 25 Q40 35 50 30 M70 25 Q60 35 50 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
 
             <div class="together">Together With Their Families</div>
 
@@ -298,44 +335,70 @@
             <div class="ceremony">
                 Ceremony<br>Insyaallah
             </div>
-
-            <button class="btn-open" onclick="alert('Ini adalah demo tombol. Di sini Anda bisa mengarahkan ke halaman utama undangan.')">Buka Undangan</button>
         </div>
 
-        <!-- Ornamen Bawah: Gapura Emas -->
+        <!-- Ornamen Bawah: Gapura & Bunga -->
         <div class="bottom-ornament">
-            <img src="https://i.ibb.co/0yH1Xqz/gapura-left.png" alt="Gapura Kiri" class="gapura-left">
-            <img src="https://i.ibb.co/0yH1Xqz/gapura-right.png" alt="Gapura Kanan" class="gapura-right">
             
-            <!-- Ornamen Bunga Bawah -->
-            <img src="https://i.ibb.co/5Wk5Z1b/bottom-floral.png" alt="Bottom Floral" class="flowers-bottom">
+            <!-- Gapura Kiri (SVG Vektor) -->
+            <svg class="gapura gapura-left" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 150 L0 150 L0 50 C 0 10, 40 0, 60 20 C 80 40, 90 80, 100 150 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M90 150 L10 150 L10 60 C 10 30, 40 20, 55 35 C 70 50, 80 90, 90 150 Z" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 2"/>
+                <circle cx="40" cy="70" r="5" fill="currentColor" opacity="0.5"/>
+                <circle cx="60" cy="100" r="3" fill="currentColor" opacity="0.5"/>
+                <path d="M20 120 Q40 100 60 120" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            
+            <!-- Gapura Kanan (SVG Vektor) -->
+            <svg class="gapura gapura-right" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 150 L0 150 L0 50 C 0 10, 40 0, 60 20 C 80 40, 90 80, 100 150 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M90 150 L10 150 L10 60 C 10 30, 40 20, 55 35 C 70 50, 80 90, 90 150 Z" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 2"/>
+                <circle cx="40" cy="70" r="5" fill="currentColor" opacity="0.5"/>
+                <circle cx="60" cy="100" r="3" fill="currentColor" opacity="0.5"/>
+                <path d="M20 120 Q40 100 60 120" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+
+            <!-- Bunga Bawah (CSS Elements) -->
+            <div class="flowers-bottom">
+                <!-- Daun-daun -->
+                <div class="leaf" style="width: 80px; height: 30px; bottom: 30px; left: 5%; transform: rotate(-30deg);"></div>
+                <div class="leaf" style="width: 90px; height: 40px; bottom: 40px; right: 5%; transform: rotate(20deg);"></div>
+                <div class="leaf" style="width: 60px; height: 20px; bottom: 10px; left: 20%; transform: rotate(-45deg); background:#a09b8a;"></div>
+                <div class="leaf" style="width: 70px; height: 25px; bottom: 15px; right: 25%; transform: rotate(45deg); background:#a09b8a;"></div>
+                
+                <!-- Mawar Putih -->
+                <div class="rose-1"></div>
+                <div class="rose-2"></div>
+                <div class="rose-3"></div>
+            </div>
         </div>
 
     </div>
 
     <script>
-        // Script untuk membuat efek kelopak bunga jatuh (opsional)
+        // Script untuk membuat efek kelopak bunga jatuh secara acak
         function createPetal() {
             const container = document.querySelector('.invitation-container');
             const petal = document.createElement('div');
             petal.classList.add('petal');
             
-            // Random size, position, and animation duration
+            // Ukuran, posisi, dan durasi jatuh acak
             const size = Math.random() * 8 + 6;
             petal.style.width = size + 'px';
             petal.style.height = size + 'px';
             petal.style.left = Math.random() * 100 + '%';
-            petal.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            petal.style.animationDuration = (Math.random() * 3 + 5) + 's'; // 5-8 detik
             
             container.appendChild(petal);
             
+            // Hapus elemen setelah selesai beranimasi agar tidak berat
             setTimeout(() => {
                 petal.remove();
-            }, 7000);
+            }, 8000);
         }
 
-        // Mulai hujan kelopak setiap 800ms
-        setInterval(createPetal, 800);
+        // Munculkan kelopak baru setiap 600ms
+        setInterval(createPetal, 600);
     </script>
 
 </body>
