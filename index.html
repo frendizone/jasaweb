@@ -3,381 +3,555 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wedding of Fikri & Aisyah</title>
+    <title>BizzTech - Jasa Pembuatan Website, Aplikasi & Layanan IT</title>
+    <meta name="description" content="Jasa pembuatan website, landing page, aplikasi mobile, dan layanan IT profesional. Desain modern, cepat, SEO friendly, dan bergaransi.">
     
-    <!-- Google Fonts: 
-         - Amiri (Font Arab/Kaligrafi)
-         - Cormorant Garamond (Font Vintage/Serif Klasik)
-         - Great Vibes (Font Wedding Script) 
-         - Lora (Font Teks Biasa) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- AOS Library untuk Animasi Scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <style>
-        /* ================= VARIABEL WARNA VINTAGE ISLAMI ================= */
+        /* ================= VARIABEL WARNA ================= */
         :root {
-            --primary: #5C4033;      /* Cokelat Tua / Dark Wood */
-            --secondary: #B76E79;    /* Dusty Rose (Merah Muda Vintage) */
-            --accent: #D4AF37;       /* Gold / Emas */
-            --bg-light: #FDFBF7;     /* Krem Kertas Kuno */
+            --primary: #0F172A;      /* Deep Navy */
+            --secondary: #2563EB;    /* Electric Blue */
+            --secondary-hover: #1D4ED8;
+            --accent: #F59E0B;       /* Gold */
+            --bg-light: #F8FAFC;     
             --bg-white: #FFFFFF;
-            --text-dark: #3E2723;
-            --text-muted: #7A6B62;
-            --font-arab: 'Amiri', serif;
-            --font-heading: 'Cormorant Garamond', serif;
-            --font-script: 'Great Vibes', cursive;
-            --font-body: 'Lora', serif;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --wa-green: #25D366;
+            --font-main: 'Poppins', sans-serif;
         }
 
         /* ================= RESET & BASE ================= */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: var(--font-body);
-            /* Background kertas dengan tekstur vintage */
-            background-color: var(--bg-light);
-            background-image: url('https://www.transparenttextures.com/patterns/old-map.png');
+            font-family: var(--font-main);
+            line-height: 1.6;
             color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; }
-        
-        .script-text { font-family: var(--font-script); color: var(--secondary); line-height: 1.2; }
-        .arab-text { font-family: var(--font-arab); font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; direction: rtl; }
-        
-        /* Container Utama */
-        .container { 
-            max-width: 550px; 
-            margin: 0 auto; 
-            background: var(--bg-white); 
-            box-shadow: 0 0 40px rgba(0,0,0,0.1); 
-            overflow: hidden; 
-            position: relative; 
-            border-left: 2px solid var(--accent);
-            border-right: 2px solid var(--accent);
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        /* ================= COVER SCREEN ================= */
-        #cover {
-            position: fixed;
-            inset: 0;
-            background: url('https://images.unsplash.com/photo-1584556812952-905ffd0c611a?q=80&w=800&auto=format&fit=crop') center/cover;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            transition: transform 1s ease-in-out;
+        /* ================= NAVBAR ================= */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-        #cover::before { content: ''; position: absolute; inset: 0; background: rgba(92, 64, 51, 0.7); /* Overlay cokelat transparan */ }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
         
-        .cover-content { position: relative; z-index: 2; padding: 30px; border: 1px solid var(--accent); border-radius: 200px 200px 0 0; margin: 20px; background: rgba(0,0,0,0.2); backdrop-filter: blur(3px); }
-        .cover-content .arab-text { color: var(--accent); }
-        .cover-content p { font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; color: #E2E8F0; }
-        .cover-content h1 { font-family: var(--font-script); font-size: 4rem; margin-bottom: 20px; color: var(--bg-light); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        
-        .btn-open {
-            background: var(--accent);
-            color: var(--primary);
-            border: none;
-            padding: 12px 35px;
-            font-size: 1rem;
-            border-radius: 0;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: 0.3s;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            letter-spacing: 2px;
-        }
-        .btn-open:hover { background: var(--bg-light); }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--secondary); }
+
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 15px; transition: color 0.3s; }
+        nav ul li a:hover { color: var(--secondary); }
+
+        .btn-nav { background: var(--secondary); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; white-space: nowrap; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2); }
+        .btn-nav:hover { background: var(--secondary-hover); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3); }
 
         /* ================= HERO SECTION ================= */
-        .hero {
-            height: 90vh;
-            background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop') center/cover;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            /* Efek lengkungan kubah (Arch) di bawah */
-            border-radius: 0 0 50% 50% / 0 0 20% 20%;
-            border-bottom: 4px solid var(--accent);
+        .hero { padding: 100px 20px 80px; background: linear-gradient(135deg, #F0F4FF 0%, #FFFFFF 100%); text-align: center; }
+        .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.2; color: var(--primary); margin-bottom: 20px; }
+        .hero h1 span { color: var(--secondary); }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+        .hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-primary { background: var(--secondary); color: white; padding: 16px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); }
+        .btn-primary:hover { background: var(--secondary-hover); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3); }
+        .btn-outline { background: transparent; color: var(--primary); padding: 16px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; border: 2px solid var(--primary); transition: 0.3s; }
+        .btn-outline:hover { background: var(--primary); color: white; }
+
+        /* ================= LAYANAN (UPDATE KATEGORI) ================= */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 36px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+        .section-title p { color: var(--text-muted); font-size: 16px; }
+
+        .layanan-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+            gap: 40px; 
+            align-items: stretch;
         }
-        .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(92, 64, 51, 0.9), transparent); border-radius: 0 0 50% 50% / 0 0 20% 20%; }
-        .hero-content { position: relative; z-index: 2; color: white; padding: 20px; margin-top: -50px; }
-        .hero-content h2 { font-size: 1.2rem; letter-spacing: 4px; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; }
-        .hero-content h1 { font-family: var(--font-script); font-size: 5rem; color: white; }
+        
+        .layanan-card { 
+            background: var(--bg-white); 
+            border-radius: 20px; 
+            padding: 40px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            border: 1px solid #E2E8F0; 
+            transition: 0.3s; 
+            position: relative; 
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .layanan-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1); 
+            border-color: var(--secondary); 
+        }
+        .layanan-card::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 5px; 
+            background: var(--secondary); 
+            opacity: 0; 
+            transition: 0.3s; 
+        }
+        .layanan-card:hover::before { opacity: 1; }
 
-        /* ================= ORNAMEN ================= */
-        .ornamen { text-align: center; font-size: 1.5rem; color: var(--accent); margin: 30px 0; letter-spacing: 15px; }
+        .layanan-icon { 
+            font-size: 48px; 
+            margin-bottom: 20px; 
+            background: #F0F4FF;
+            width: 80px; height: 80px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 16px;
+        }
+        .layanan-card h3 { font-size: 24px; font-weight: 800; color: var(--primary); margin-bottom: 15px; }
+        .layanan-desc { color: var(--text-muted); font-size: 15px; margin-bottom: 25px; }
+        
+        .sub-layanan-list { list-style: none; margin-bottom: 30px; flex-grow: 1; }
+        .sub-layanan-list li { 
+            font-size: 15px; 
+            color: var(--text-dark); 
+            padding: 10px 0; 
+            border-bottom: 1px dashed #E2E8F0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .sub-layanan-list li:last-child { border-bottom: none; }
+        .sub-layanan-list li span { color: var(--secondary); font-weight: bold; }
+        
+        .btn-layanan {
+            display: inline-block;
+            text-align: center;
+            background: #F1F5F9;
+            color: var(--primary);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-layanan:hover { background: var(--secondary); color: white; }
 
-        /* ================= SECTIONS ================= */
-        section { padding: 50px 30px; text-align: center; }
-        .section-title { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
-        .section-subtitle { font-size: 1rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.8; font-style: italic; }
+        /* ================= KENAPA KAMI ================= */
+        .bg-primary { background: var(--primary); color: white; }
+        .bg-primary .section-title h2 { color: white; }
+        .bg-primary .section-title p { color: #94A3B8; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .feature-item { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+        .feature-item h4 { color: var(--accent); font-size: 18px; margin-bottom: 10px; }
+        .feature-item p { color: #CBD5E1; font-size: 14px; }
 
-        /* ================= MEMPELAI ================= */
-        .mempelai-wrapper { display: flex; flex-direction: column; gap: 30px; }
-        /* Foto dibentuk kubah (arch) */
-        .mempelai-foto { width: 160px; height: 220px; border-radius: 100px 100px 0 0; object-fit: cover; margin: 0 auto 20px; border: 3px solid var(--accent); padding: 5px; background: white; }
-        .mempelai-nama { font-family: var(--font-script); font-size: 3rem; color: var(--primary); margin-bottom: 5px; }
-        .mempelai-ortu { font-size: 0.9rem; color: var(--text-muted); }
-        .and-symbol { font-family: var(--font-arab); font-size: 2.5rem; color: var(--accent); margin: 10px 0; }
+        /* ================= PORTOFOLIO ================= */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .portfolio-card { position: relative; border-radius: 16px; overflow: hidden; height: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); cursor: pointer; background: #000; }
+        .portfolio-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); opacity: 0.9; }
+        .portfolio-card:hover img { transform: scale(1.15); opacity: 1; }
+        .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; color: white; }
+        .portfolio-tag { background: var(--secondary); color: white; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 50px; align-self: flex-start; margin-bottom: 10px; transform: translateY(10px); opacity: 0; transition: all 0.4s ease; }
+        .portfolio-title { font-size: 22px; font-weight: 700; margin-bottom: 5px; transform: translateY(10px); transition: all 0.4s ease; }
+        .portfolio-desc { font-size: 14px; color: #CBD5E1; margin-bottom: 15px; transform: translateY(10px); transition: all 0.4s ease 0.1s; }
+        .btn-view { display: inline-block; background: white; color: var(--primary); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; align-self: flex-start; transform: translateY(20px); opacity: 0; transition: all 0.4s ease 0.2s; }
+        .btn-view:hover { background: var(--secondary); color: white; }
+        .portfolio-card:hover .portfolio-tag, .portfolio-card:hover .portfolio-title, .portfolio-card:hover .portfolio-desc { transform: translateY(0); opacity: 1; }
+        .portfolio-card:hover .btn-view { transform: translateY(0); opacity: 1; }
 
-        /* ================= TANGGAL & COUNTDOWN ================= */
-        .bg-primary { background: var(--primary); color: white; position: relative; }
-        .bg-primary .section-title { color: var(--accent); }
-        .bg-primary .section-subtitle { color: #D1D5DB; }
-        .countdown-grid { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-        .countdown-box { background: rgba(255,255,255,0.1); padding: 15px 10px; border-radius: 50px 50px 0 0; min-width: 70px; border: 1px solid var(--accent); }
-        .countdown-box h3 { font-size: 1.8rem; font-family: var(--font-heading); margin-bottom: 5px; color: var(--accent); }
-        .countdown-box p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #D1D5DB; }
+        /* ================= ALUR KERJA ================= */
+        .step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
+        .step-item { position: relative; padding: 20px; }
+        .step-number { width: 50px; height: 50px; background: var(--secondary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; margin: 0 auto 15px; }
+        .step-item h4 { font-size: 18px; color: var(--primary); margin-bottom: 8px; }
+        .step-item p { font-size: 14px; color: var(--text-muted); }
 
-        /* ================= ACARA ================= */
-        .acara-card { background: var(--bg-light); padding: 30px; margin-bottom: 20px; border: 1px solid var(--accent); border-radius: 10px; position: relative; }
-        .acara-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--primary); }
-        .acara-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 15px; }
-        .btn-maps { display: inline-block; background: var(--primary); color: var(--accent); padding: 10px 25px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; border: 1px solid var(--accent); }
-        .btn-maps:hover { background: var(--accent); color: var(--primary); }
+        /* ================= PRICELIST ================= */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center; }
+        .pricing-card { background: var(--bg-white); padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 2px solid transparent; transition: 0.3s; position: relative; }
+        .pricing-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
+        .pricing-card.populer { border-color: var(--secondary); box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15); transform: scale(1.05); z-index: 10; }
+        .badge-populer { background: var(--accent); color: var(--primary); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
+        .pricing-card h3 { font-size: 22px; color: var(--text-muted); font-weight: 600; margin-bottom: 15px; }
+        
+        .price-custom { font-size: 32px; font-weight: 800; color: var(--secondary); margin-bottom: 5px; }
+        .price-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 25px; height: 40px; }
+        
+        .pricing-list { list-style: none; text-align: left; margin-bottom: 30px; border-top: 1px solid #E2E8F0; padding-top: 25px; }
+        .pricing-list li { padding: 8px 0; font-size: 15px; color: var(--text-dark); display: flex; gap: 10px; }
+        .pricing-list li::before { content: "✓"; color: var(--secondary); font-weight: bold; }
+        .btn-pricing { display: block; width: 100%; padding: 14px; background: #E2E8F0; color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 700; transition: 0.3s; }
+        .btn-pricing:hover { background: var(--primary); color: white; }
+        .pricing-card.populer .btn-pricing { background: var(--secondary); color: white; }
+        .pricing-card.populer .btn-pricing:hover { background: var(--secondary-hover); }
 
-        /* ================= GALERI ================= */
-        .galeri-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .galeri-grid img { width: 100%; height: 200px; object-fit: cover; border: 2px solid var(--accent); border-radius: 10px; }
+        /* Garansi Badge di bawah Harga */
+        .guarantee-badge { margin-top: 40px; display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--text-muted); font-size: 14px; background: #F1F5F9; padding: 15px; border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; }
+        .guarantee-badge span { font-size: 24px; flex-shrink: 0; }
 
-        /* ================= KADO DIGITAL ================= */
-        .kado-card { background: white; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 15px; border: 1px solid var(--secondary); text-align: left; border-radius: 10px; }
-        .kado-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 5px; }
-        .kado-card h4 { font-size: 1.2rem; color: var(--primary); margin-bottom: 10px; letter-spacing: 1px; }
-        .btn-copy { background: var(--bg-light); border: 1px solid var(--primary); color: var(--primary); padding: 8px 15px; cursor: pointer; font-size: 0.8rem; transition: 0.3s; border-radius: 5px; }
-        .btn-copy:hover { background: var(--primary); color: white; }
+        /* ================= FAQ ================= */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--bg-white); border-radius: 12px; margin-bottom: 15px; padding: 20px 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #E2E8F0; transition: 0.3s; cursor: pointer; }
+        .faq-item:hover { border-color: var(--secondary); box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1); }
+        .faq-item h4 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item p { color: var(--text-muted); font-size: 15px; }
 
         /* ================= FOOTER ================= */
-        footer { background: var(--primary); color: white; padding: 50px 20px; text-align: center; border-top: 3px solid var(--accent); }
-        footer p { font-size: 0.9rem; color: #D1D5DB; margin-bottom: 10px; }
-        .closing-text { font-family: var(--font-script); font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+        footer { background: var(--primary); color: #94A3B8; padding: 60px 20px 30px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+        .footer-col h4 { color: white; font-size: 18px; margin-bottom: 20px; }
+        .footer-col p, .footer-col a { display: block; color: #94A3B8; text-decoration: none; margin-bottom: 10px; font-size: 14px; transition: 0.3s; }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
+        
+        /* ================= FLOATING WHATSAPP + TEXT ================= */
+        .float-wa { position: fixed; bottom: 30px; right: 30px; background: var(--wa-green); color: white; padding: 12px 20px; border-radius: 50px; display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); text-decoration: none; z-index: 999; transition: transform 0.3s; }
+        .float-wa:hover { transform: scale(1.05) translateY(-5px); }
+        .float-wa span { font-size: 24px; }
 
-        /* ================= MUSIK ================= */
-        .music-btn { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: var(--accent); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); border: 2px solid var(--accent); }
-        .music-btn.playing { animation: puter 3s linear infinite; }
-        @keyframes puter { 100% { transform: rotate(360deg); } }
+        /* ================= BACK TO TOP ================= */
+        .back-to-top { position: fixed; bottom: 30px; left: 30px; background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; text-decoration: none; z-index: 999; opacity: 0.7; transition: 0.3s; }
+        .back-to-top:hover { opacity: 1; transform: translateY(-5px); }
 
-        /* Responsive */
-        @media (min-width: 601px) {
-            .mempelai-wrapper { flex-direction: row; justify-content: center; align-items: center; }
-            .mempelai-col { flex: 1; }
-            .and-symbol { margin: 0 20px; }
-            .galeri-grid { grid-template-columns: repeat(3, 1fr); }
+        /* ================= RESPONSIVE (MOBILE) ================= */
+        @media (max-width: 768px) {
+            .container { padding: 0 16px; }
+            nav ul { display: none; }
+            .btn-nav { padding: 8px 14px; font-size: 12px; border-radius: 6px; }
+            .logo { font-size: 20px; }
+            
+            .hero { padding: 60px 16px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 15px; }
+            .hero-buttons { flex-direction: column; gap: 10px; }
+            .btn-primary, .btn-outline { padding: 14px 20px; font-size: 14px; width: 100%; }
+            
+            .layanan-grid { grid-template-columns: 1fr; gap: 20px; }
+            .layanan-card { padding: 30px 20px; }
+            
+            .section-title h2 { font-size: 28px; }
+            .pricing-card.populer { transform: scale(1); }
+            
+            /* Portofolio Mobile */
+            .portfolio-tag, .portfolio-title, .portfolio-desc, .btn-view { transform: translateY(0) !important; opacity: 1 !important; }
+            
+            /* Floating WA Mobile */
+            .float-wa { padding: 10px; border-radius: 50%; bottom: 20px; right: 20px; }
+            .float-wa span { font-size: 28px; }
+            .float-wa .wa-text { display: none; }
+            
+            .back-to-top { bottom: 20px; left: 20px; width: 40px; height: 40px; font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- AUDIO MUSIK (Ganti dengan musik Islami / akustik) -->
-    <audio id="bg-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- COVER SCREEN -->
-    <div id="cover">
-        <div class="cover-content">
-            <div class="arab-text">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
-            <p>The Wedding Of</p>
-            <h1>Fikri & Aisyah</h1>
-            <p style="font-size: 0.9rem; margin-bottom: 30px; color: white;">12 Dzulhijjah 1447 H / 2026 M</p>
-            <button class="btn-open" onclick="openInvitation()">Buka Undangan</button>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <span>◆</span> BizzTech.
+            </a>
+            <ul>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#harga">Harga</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="https://wa.me/6281225309301" class="btn-nav">Konsultasi Gratis</a>
         </div>
-    </div>
+    </nav>
 
-    <!-- KONTEN UTAMA -->
-    <div class="container" id="main-content">
-        
-        <!-- HERO -->
-        <div class="hero">
-            <div class="hero-content" data-aos="fade-up">
-                <h2>Walimatul 'Ursy</h2>
-                <h1>F & A</h1>
-                <p style="margin-top: 20px; letter-spacing: 2px;">12 . 12 . 2026</p>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Wujudkan Ide Bisnis Anda Menjadi <span>Kenyataan Digital</span></h1>
+            <p>Tingkatkan penjualan dengan Landing Page yang menjual, bangun kredibilitas lewat Website profesional, dan permudah operasional dengan Aplikasi custom serta Layanan IT terpercaya.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/6281225309301?text=Halo,%20saya%20ingin%20konsultasi%20mengenai%20kebutuhan%20digital%20bisnis%20saya" class="btn-primary">Konsultasi Gratis</a>
+                <a href="#layanan" class="btn-outline">Lihat Semua Layanan</a>
             </div>
         </div>
+    </section>
 
-        <div class="ornamen">✦ ✦ ✦</div>
-
-        <!-- MEMPELAI -->
-        <section>
-            <div class="arab-text" style="font-size: 1.3rem; margin-bottom: 30px;">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً ۗ</div>
-            <p class="section-subtitle">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu dapat ketenangan hati dan menjadikan kasih sayang di antara kamu." <br><strong>(QS. Ar-Rum: 21)</strong></p>
+    <!-- LAYANAN (UPDATE KATEGORI) -->
+    <section id="layanan">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+                <p>Solusi digital lengkap dan terintegrasi untuk kebutuhan bisnis Anda</p>
+            </div>
             
-            <div class="mempelai-wrapper">
-                <div class="mempelai-col" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop" alt="Mempelai Pria" class="mempelai-foto">
-                    <h2 class="mempelai-nama">Fikri</h2>
-                    <p class="mempelai-ortu">Putra dari<br>Bapak H. Abdullah & Ibu Hj. Khadijah</p>
-                </div>
+            <div class="layanan-grid">
                 
-                <div class="and-symbol" data-aos="zoom-in">و</div>
-                
-                <div class="mempelai-col" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" alt="Mempelai Wanita" class="mempelai-foto">
-                    <h2 class="mempelai-nama">Aisyah</h2>
-                    <p class="mempelai-ortu">Putri dari<br>Bapak Umar & Ibu Fatimah</p>
+                <!-- KATEGORI 1: WEBSITE -->
+                <div class="layanan-card">
+                    <div class="layanan-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p class="layanan-desc">Pembuatan website profesional yang berfokus pada performa, kecepatan, dan konversi penjualan.</p>
+                    
+                    <ul class="sub-layanan-list">
+                        <li><span>✓</span> <strong>Landing Page:</strong> Halaman promosi fokus penjualan.</li>
+                        <li><span>✓</span> <strong>Company Profile:</strong> Website profil untuk kredibilitas bisnis.</li>
+                        <li><span>✓</span> <strong>Toko Online:</strong> E-commerce lengkap dengan keranjang & pembayaran.</li>
+                        <li><span>✓</span> <strong>Web Custom:</strong> Sistem informasi, portal berita, atau dashboard.</li>
+                    </ul>
+
+                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20tertarik%20dengan%20layanan%20Web%20Development" class="btn-layanan">Tanya Layanan Web</a>
+                </div>
+
+                <!-- KATEGORI 2: APLIKASI -->
+                <div class="layanan-card">
+                    <div class="layanan-icon">📱</div>
+                    <h3>App Development</h3>
+                    <p class="layanan-desc">Pembuatan aplikasi mobile (Android & iOS) yang memudahkan operasional dan pelanggan Anda.</p>
+                    
+                    <ul class="sub-layanan-list">
+                        <li><span>✓</span> <strong>Aplikasi Ritel / Kasir (POS):</strong> Manajemen stok & transaksi toko.</li>
+                        <li><span>✓</span> <strong>Aplikasi F&B:</strong> Sistem pesan antar, katalog menu, & reservasi kafe.</li>
+                        <li><span>✓</span> <strong>Aplikasi Laundry:</strong> Pelacakan status cucian & antar-jemput.</li>
+                        <li><span>✓</span> <strong>Custom App:</strong> Aplikasi khusus sesuai alur bisnis Anda.</li>
+                    </ul>
+
+                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20tertarik%20dengan%20layanan%20Pembuatan%20Aplikasi" class="btn-layanan">Tanya Layanan App</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- KENAPA KAMI -->
+    <section class="bg-primary">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kenapa Memilih BizzTech?</h2>
+                <p>Kami tidak sekadar membuat website/aplikasi, kami membangun aset bisnis Anda.</p>
+            </div>
+            <div class="grid-4">
+                <div class="feature-item">
+                    <h4>⚡ Super Cepat</h4>
+                    <p>Sistem dan website dioptimalkan agar loading di bawah 3 detik, meningkatkan pengalaman pengguna.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📱 Responsif</h4>
+                    <p>Tampilan sempurna di semua perangkat, mulai dari HP, tablet, hingga desktop.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔍 SEO Friendly</h4>
+                    <p>Struktur kode bersih yang memudahkan website Anda muncul di halaman pertama Google.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🛡️ Garansi Support</h4>
+                    <p>Bebas revisi desain dan dukungan teknis (support) gratis selama masa garansi.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="ornamen">✦ ✦ ✦</div>
+    <!-- PORTOFOLIO -->
+    <section id="portofolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portofolio Kami</h2>
+                <p>Beberapa project unggulan yang telah kami kerjakan</p>
+            </div>
+            <div class="portfolio-grid">
+                
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Landing Page Toko Batik">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-tag">Web Development</span>
+                        <h4 class="portfolio-title">Toko Batik Nusantara</h4>
+                        <p class="portfolio-desc">Landing page penjualan batik premium dengan konversi tinggi.</p>
+                        <a href="#" class="btn-view">Lihat Detail</a>
+                    </div>
+                </div>
 
-        <!-- COUNTDOWN -->
-        <section class="bg-primary">
-            <h2 class="section-title">Menuju Hari Bahagia</h2>
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Company Profile Startup">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-tag">Web Development</span>
+                        <h4 class="portfolio-title">Tech Startup Indonesia</h4>
+                        <p class="portfolio-desc">Website profil perusahaan teknologi dengan desain futuristik.</p>
+                        <a href="#" class="btn-view">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=800&auto=format&fit=crop" alt="Website Klinik">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-tag">App Development</span>
+                        <h4 class="portfolio-title">Klinik Kecantikan Glow</h4>
+                        <p class="portfolio-desc">Aplikasi mobile booking dokter dan profil klinik yang modern.</p>
+                        <a href="#" class="btn-view">Lihat Detail</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ALUR KERJA -->
+    <section style="background: var(--bg-white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Alur Kerja Sederhana</h2>
+                <p>Hanya butuh 3 langkah mudah untuk project Anda live!</p>
+            </div>
+            <div class="step-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Konsultasi</h4>
+                    <p>Diskusikan kebutuhan bisnis dan referensi desain yang Anda inginkan secara gratis.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Proses Desain</h4>
+                    <p>Kami membuat website/aplikasi sesuai kesepakatan dalam waktu yang efisien.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Launching</h4>
+                    <p>Website/aplikasi siap diakses publik setelah Anda menyetujui hasil akhirnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HARGA -->
+    <section id="harga">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pilihan Paket Layanan</h2>
+                <p>Hubungi admin kami untuk mendapatkan penawaran harga terbaik sesuai kebutuhan Anda</p>
+            </div>
+            <div class="pricing-grid">
+                
+                <div class="pricing-card">
+                    <h3>Landing Page</h3>
+                    <div class="price-custom">Hubungi Admin</div>
+                    <p class="price-desc">Cocok untuk promosi produk tunggal</p>
+                    <ul class="pricing-list">
+                        <li>1 Halaman Fokus Penjualan</li>
+                        <li>Desain Responsif (HP & PC)</li>
+                        <li>Tombol Direct WhatsApp</li>
+                        <li>Gratis Domain (.my.id) 1 Thn</li>
+                        <li>Gratis Hosting 1 Thn</li>
+                    </ul>
+                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20ingin%20tanya%20harga%20paket%20Landing%20Page" class="btn-pricing">Tanya Harga</a>
+                </div>
+
+                <div class="pricing-card populer">
+                    <div class="badge-populer">PALING LAKU</div>
+                    <h3>Company Profile</h3>
+                    <div class="price-custom">Hubungi Admin</div>
+                    <p class="price-desc">Untuk kredibilitas bisnis & perusahaan</p>
+                    <ul class="pricing-list">
+                        <li>5 - 7 Halaman Lengkap</li>
+                        <li>Desain Custom Premium</li>
+                        <li>Optimasi SEO Google</li>
+                        <li>Gratis Domain (.com) 1 Thn</li>
+                        <li>Gratis Hosting 1 Thn</li>
+                        <li>Support 30 Hari</li>
+                    </ul>
+                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20ingin%20tanya%20harga%20paket%20Company%20Profile" class="btn-pricing">Tanya Harga</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Aplikasi Custom</h3>
+                    <div class="price-custom">Hubungi Admin</div>
+                    <p class="price-desc">Sistem operasional (POS, Laundry, F&B)</p>
+                    <ul class="pricing-list">
+                        <li>Aplikasi Android / iOS</li>
+                        <li>Panel Admin (Web Dashboard)</li>
+                        <li>Desain UI/UX Modern</li>
+                        <li>Gratis Hosting Server 1 Thn</li>
+                        <li>Support & Maintenance 60 Hari</li>
+                    </ul>
+                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20ingin%20tanya%20harga%20pembuatan%20Aplikasi" class="btn-pricing">Tanya Harga</a>
+                </div>
+
+            </div>
             
-            <div class="countdown-grid">
-                <div class="countdown-box"><h3 id="days">00</h3><p>Hari</p></div>
-                <div class="countdown-box"><h3 id="hours">00</h3><p>Jam</p></div>
-                <div class="countdown-box"><h3 id="minutes">00</h3><p>Menit</p></div>
-                <div class="countdown-box"><h3 id="seconds">00</h3><p>Detik</p></div>
+            <div class="guarantee-badge">
+                <span>🛡️</span>
+                <div><strong>Garansi 100% Uang Kembali</strong> jika kami tidak menyelesaikan project sesuai kesepakatan awal.</div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ACARA -->
-        <section>
-            <h2 class="section-title" data-aos="fade-up">Waktu & Tempat</h2>
-            
-            <div class="acara-card" data-aos="fade-up">
-                <h3>Akad Nikah</h3>
-                <p><strong>Sabtu, 12 Desember 2026</strong><br>Pukul 08:00 - 10:00 WIB</p>
-                <p>Masjid Agung Al-Azhar<br>Jl. Sisingamangaraja, Jakarta Selatan</p>
-                <a href="https://maps.google.com" target="_blank" class="btn-maps">Lihat Peta Lokasi</a>
+    <!-- FAQ -->
+    <section id="faq" style="background: var(--bg-white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pertanyaan Umum (FAQ)</h2>
+                <p>Masih ragu? Temukan jawabannya di sini.</p>
             </div>
-
-            <div class="acara-card" data-aos="fade-up" data-aos-delay="100">
-                <h3>Walimatul 'Ursy (Resepsi)</h3>
-                <p><strong>Sabtu, 12 Desember 2026</strong><br>Pukul 11:00 - 15:00 WIB</p>
-                <p>Gedung Balai Kartini<br>Jl. Gatot Subroto No. 37, Jakarta Selatan</p>
-                <a href="https://maps.google.com" target="_blank" class="btn-maps">Lihat Peta Lokasi</a>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h4>Berapa lama proses pembuatannya? <span>+</span></h4>
+                    <p>Untuk Landing Page biasanya 2-3 hari kerja. Untuk Company Profile sekitar 7-14 hari. Untuk Aplikasi custom bisa memakan waktu 1-3 bulan tergantung kompleksitas fitur.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Apakah saya bisa request desain sendiri? <span>+</span></h4>
+                    <p>Tentu! Kami menyediakan layanan desain custom. Anda bisa memberikan referensi website/aplikasi yang Anda sukai, dan kami akan menyesuaikannya.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Bagaimana sistem pembayarannya? <span>+</span></h4>
+                    <p>Pembayaran dilakukan 2 tahap: DP 50% saat sepakat, dan pelunasan 50% saat project selesai dan siap diluncurkan.</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="ornamen">✦ ✦ ✦</div>
-
-        <!-- GALERI -->
-        <section style="background: var(--bg-light);">
-            <h2 class="section-title" data-aos="fade-up">Momen Kami</h2>
-            <div class="galeri-grid">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=400&auto=format&fit=crop" alt="Galeri 1" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400&auto=format&fit=crop" alt="Galeri 2" data-aos="zoom-in" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=400&auto=format&fit=crop" alt="Galeri 3" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=400&auto=format&fit=crop" alt="Galeri 4" data-aos="zoom-in" data-aos-delay="300">
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>◆ BizzTech.</h4>
+                <p>Agensi digital yang berfokus pada pembuatan website, aplikasi, dan solusi IT untuk pertumbuhan bisnis Anda.</p>
             </div>
-        </section>
-
-        <!-- KADO DIGITAL -->
-        <section>
-            <h2 class="section-title" data-aos="fade-up">Tanda Kasih</h2>
-            <p class="section-subtitle" data-aos="fade-up">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Jika memberi adalah ungkapan tanda kasih, Anda dapat memberi melalui:</p>
-            
-            <div class="kado-card" data-aos="fade-up">
-                <p>Bank Syariah Indonesia (BSI)</p>
-                <h4 id="rek1">1234567890</h4>
-                <p>a.n Fikri Maulana</p>
-                <button class="btn-copy" onclick="copyText('rek1')">Salin Rekening</button>
+            <div class="footer-col">
+                <h4>Layanan</h4>
+                <a href="#layanan">Web Development</a>
+                <a href="#layanan">App Development</a>
+                <a href="#layanan">Layanan IT</a>
+                <a href="#layanan">Maintenance</a>
             </div>
-
-            <div class="kado-card" data-aos="fade-up" data-aos-delay="100">
-                <p>Bank Mandiri</p>
-                <h4 id="rek2">0987654321</h4>
-                <p>a.n Aisyah Az-Zahra</p>
-                <button class="btn-copy" onclick="copyText('rek2')">Salin Rekening</button>
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <a href="https://wa.me/6281225309301">WhatsApp: 0812-2530-9301</a>
+                <a href="mailto:hfrendizone@gmail.com">Email: hfrendizone@gmail.com</a>
+                <p>Jakarta, Indonesia</p>
             </div>
-        </section>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BizzTech. All rights reserved.</p>
+        </div>
+    </footer>
 
-        <!-- FOOTER -->
-        <footer>
-            <p data-aos="fade-up">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
-            <h2 class="closing-text" data-aos="fade-up">Wassalamu'alaikum Wr. Wb.</h2>
-            <p style="font-size: 0.8rem; color: #888;">&copy; 2026 Fikri & Aisyah. Made with Love.</p>
-        </footer>
+    <!-- FLOATING WHATSAPP DENGAN TEKS -->
+    <a href="https://wa.me/6281225309301" class="float-wa" title="Hubungi Kami">
+        <span>💬</span>
+        <div class="wa-text">Butuh Bantuan?</div>
+    </a>
 
-    </div>
+    <!-- BACK TO TOP -->
+    <a href="#" class="back-to-top" title="Kembali ke Atas">↑</a>
 
-    <!-- TOMBOL MUSIK -->
-    <div class="music-btn" id="music-btn" onclick="toggleMusic()">
-        <span id="music-icon">🎵</span>
-    </div>
-
-    <!-- SCRIPT AOS & JAVASCRIPT -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-
-        function openInvitation() {
-            const cover = document.getElementById('cover');
-            const music = document.getElementById('bg-music');
-            const musicBtn = document.getElementById('music-btn');
-            
-            cover.style.transform = 'translateY(-100%)';
-            setTimeout(() => { cover.style.display = 'none'; }, 1000);
-
-            music.play();
-            musicBtn.classList.add('playing');
-            document.getElementById('music-icon').innerText = '⏸';
-        }
-
-        let isPlaying = false;
-        function toggleMusic() {
-            const music = document.getElementById('bg-music');
-            const musicBtn = document.getElementById('music-btn');
-            const icon = document.getElementById('music-icon');
-
-            if (isPlaying) {
-                music.pause();
-                musicBtn.classList.remove('playing');
-                icon.innerText = '🎵';
-                isPlaying = false;
-            } else {
-                music.play();
-                musicBtn.classList.add('playing');
-                icon.innerText = '⏸';
-                isPlaying = true;
-            }
-        }
-
-        function copyText(elementId) {
-            const text = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Nomor rekening berhasil disalin!');
-            });
-        }
-
-        const targetDate = new Date("2026-12-12T08:00:00").getTime();
-
-        const interval = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-
-            if (distance < 0) {
-                clearInterval(interval);
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-        }, 1000);
-    </script>
 </body>
 </html>
