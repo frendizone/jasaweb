@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizzTech - Jasa Pembuatan Website, Aplikasi & Layanan IT</title>
+    <title>FRDigital - Jasa Pembuatan Website, Aplikasi & Layanan IT</title>
     <meta name="description" content="Jasa pembuatan website, landing page, aplikasi mobile, dan layanan IT profesional. Desain modern, cepat, SEO friendly, dan bergaransi.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="logo-frdigital.jpg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +55,16 @@
         }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
         
-        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo { 
+            font-size: 24px; 
+            font-weight: 800; 
+            color: var(--primary); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        .logo img { height: 40px; width: auto; }
         .logo span { color: var(--secondary); }
 
         nav ul { display: flex; list-style: none; gap: 30px; }
@@ -213,7 +225,8 @@
         /* ================= FOOTER ================= */
         footer { background: var(--primary); color: #94A3B8; padding: 60px 20px 30px; border-top: 1px solid rgba(255,255,255,0.1); }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
-        .footer-col h4 { color: white; font-size: 18px; margin-bottom: 20px; }
+        .footer-col h4 { color: white; font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;}
+        .footer-col h4 img { height: 30px; width: auto; filter: brightness(0) invert(1); } /* Membuat logo jadi putih */
         .footer-col p, .footer-col a { display: block; color: #94A3B8; text-decoration: none; margin-bottom: 10px; font-size: 14px; transition: 0.3s; }
         .footer-col a:hover { color: var(--accent); }
         .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
@@ -233,6 +246,7 @@
             nav ul { display: none; }
             .btn-nav { padding: 8px 14px; font-size: 12px; border-radius: 6px; }
             .logo { font-size: 20px; }
+            .logo img { height: 32px; }
             
             .hero { padding: 60px 16px; }
             .hero h1 { font-size: 32px; }
@@ -264,7 +278,9 @@
     <nav>
         <div class="container">
             <a href="#" class="logo">
-                <span>◆</span> BizzTech.
+                <!-- Logo Gambar -->
+                <img src="logo-frdigital.png" alt="Logo FRDigital">
+                <span>FRDigital.</span>
             </a>
             <ul>
                 <li><a href="#layanan">Layanan</a></li>
@@ -309,7 +325,6 @@
                         <li><span>✓</span> <strong>Company Profile:</strong> Website profil untuk kredibilitas bisnis.</li>
                         <li><span>✓</span> <strong>Toko Online:</strong> E-commerce lengkap dengan keranjang & pembayaran.</li>
                         <li><span>✓</span> <strong>Web Custom:</strong> Sistem informasi, portal berita, atau dashboard.</li>
-                        <li><span>✓</span> <strong>Undangan Digital:</strong> Undangan Pernikahan Digital atau event lainya.</li>
                     </ul>
 
                     <a href="https://wa.me/6281225309301?text=Halo,%20saya%20tertarik%20dengan%20layanan%20Web%20Development" class="btn-layanan">Tanya Layanan Web</a>
@@ -339,7 +354,7 @@
     <section class="bg-primary">
         <div class="container">
             <div class="section-title">
-                <h2>Kenapa Memilih BizzTech?</h2>
+                <h2>Kenapa Memilih FRDigital?</h2>
                 <p>Kami tidak sekadar membuat website/aplikasi, kami membangun aset bisnis Anda.</p>
             </div>
             <div class="grid-4">
@@ -523,7 +538,10 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>◆ BizzTech.</h4>
+                <h4>
+                    <img src="logo-frdigital.png" alt="Logo FRDigital">
+                    FRDigital.
+                </h4>
                 <p>Agensi digital yang berfokus pada pembuatan website, aplikasi, dan solusi IT untuk pertumbuhan bisnis Anda.</p>
             </div>
             <div class="footer-col">
@@ -536,12 +554,12 @@
             <div class="footer-col">
                 <h4>Hubungi Kami</h4>
                 <a href="https://wa.me/6281225309301">WhatsApp: 0812-2530-9301</a>
-                <a href="mailto:hfrendizone@gmail.com">Email: hfrendizone@gmail.com</a>
-                <p>Jakarta, Indonesia</p>
+                <a href="mailto:hfrendizone@gmail.com">Email: frendizone@gmail.com</a>
+                <p>Surakarta, Indonesia</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 BizzTech. All rights reserved.</p>
+            <p>&copy; 2026 FRDigital. All rights reserved.</p>
         </div>
     </footer>
 
