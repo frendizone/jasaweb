@@ -3,374 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Pernikahan Jawa - Adi & Sri</title>
+    <title>Wedding Invitation - Aliyah & Yuangga</title>
+    
+    <!-- Font Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --gold: #D4AF37;
-            --dark-brown: #3b2818;
-            --light-brown: #8b5a2b;
-            --cream: #fdfbf7;
-            --text-dark: #2c1e12;
+            --gold: #C09B38; /* Warna emas sesuai gambar */
+            --text-dark: #333333;
+            --text-light: #666666;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
+            background-color: #EAE7DF; /* Warna background luar */
             font-family: 'Poppins', sans-serif;
-            background-color: var(--dark-brown);
-            color: var(--cream);
+            display: flex;
+            justify-content: center;
             overflow-x: hidden;
         }
 
-        /* ================= HALAMAN PEMBUKA (COVER) ================= */
-        #cover {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(rgba(59, 40, 24, 0.8), rgba(59, 40, 24, 0.95)), url('https://images.unsplash.com/photo-1620503374956-c942862f0372?q=80&w=1000&auto=format&fit=crop') center/cover;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        /* ================= CONTAINER UTAMA (Mobile View) ================= */
+        .invitation-container {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            animation: fadeIn 1.5s ease;
         }
 
-        /* Animasi Gunungan Wayang */
-        .gunungan-container {
-            width: 250px;
-            height: 250px;
-            margin-bottom: 20px;
-            animation: floatGunungan 4s ease-in-out infinite;
-            filter: drop-shadow(0 10px 15px rgba(212, 175, 55, 0.4));
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        @keyframes floatGunungan {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(3deg); }
-        }
-
-        .cover-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            opacity: 0;
-            animation: fadeIn 2s ease forwards 0.5s;
-        }
-
-        .cover-subtitle {
-            font-size: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards 1s;
-        }
-
-        .btn-open {
-            background-color: var(--gold);
-            color: var(--dark-brown);
-            border: none;
-            padding: 15px 35px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-            transition: 0.3s;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards 1.5s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn-open:hover { transform: scale(1.05); background-color: #e5c35b; }
-
-        @keyframes fadeIn { to { opacity: 1; } }
-
-        /* ================= KONTEN UTAMA ================= */
-        #main-content {
-            display: none;
-            background: var(--cream);
-            color: var(--text-dark);
-            padding-bottom: 50px;
-        }
-
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .batik-border {
-            height: 20px;
-            background: repeating-linear-gradient(45deg, var(--gold), var(--gold) 10px, var(--dark-brown) 10px, var(--dark-brown) 20px);
-            margin: 40px 0;
-            opacity: 0.3;
-        }
-
-        /* Mempelai */
-        .bismillah {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--light-brown);
-        }
-
-        .mempelai-name {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem;
-            color: var(--dark-brown);
-            margin: 10px 0;
-        }
-
-        .dan {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin: 15px 0;
-        }
-
-        .mempelai-parent {
-            font-size: 0.9rem;
-            color: #666;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* Acara */
-        .event-card {
-            background: white;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 15px;
-            padding: 30px 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .event-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: var(--dark-brown);
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--gold);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .event-detail { font-size: 1rem; margin-bottom: 10px; line-height: 1.6; }
-        .event-detail strong { color: var(--light-brown); }
-
-        /* Countdown */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .countdown-box {
-            background: var(--dark-brown);
-            color: var(--gold);
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 70px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .countdown-box span { display: block; font-size: 1.5rem; font-weight: 700; }
-        .countdown-box p { font-size: 0.8rem; text-transform: uppercase; color: var(--cream); margin-top: 5px; }
-
-        /* Animasi Bunga Jatuh */
-        .flower {
-            position: fixed;
-            top: -50px;
-            font-size: 24px;
+        /* ================= ORNAMEN POJOK ATAS ================= */
+        .top-ornament {
+            position: absolute;
+            top: -5%;
+            left: 0;
+            width: 100%;
             z-index: 10;
-            animation: fall linear forwards;
             pointer-events: none;
         }
 
-        @keyframes fall {
-            to { transform: translateY(100vh) rotate(360deg); }
+        /* ================= GARIS LENGKUNG (ARCH) ================= */
+        .arch-border {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            height: 70%;
+            border: 2px solid var(--gold);
+            border-radius: 250px 250px 0 0; /* Membuat bentuk lengkung */
+            z-index: 1;
+            opacity: 0.8;
         }
 
-        /* Tombol Maps */
-        .btn-maps {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--dark-brown);
-            padding: 12px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: 0.3s;
+        /* ================= KONTEN TEKS ================= */
+        .content {
+            position: relative;
+            z-index: 20;
+            text-align: center;
+            padding: 80px 30px 400px 30px; /* Padding bawah besar untuk area bunga */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .btn-maps:hover { background: var(--light-brown); color: white; }
+
+        /* Bismillah / Logo */
+        .bismillah {
+            width: 80px;
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: slideDown 1s ease forwards 0.3s;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .together {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-weight: 400;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 0.6s;
+        }
+
+        .names {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.3;
+            opacity: 0;
+            animation: slideUp 1s ease forwards 0.9s;
+        }
+
+        .and {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: var(--text-dark);
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 1.2s;
+        }
+
+        .and::before, .and::after {
+            content: "";
+            width: 40px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .request {
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-top: 50px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 1.5s;
+        }
+
+        .wedding-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 65px;
+            color: var(--gold);
+            margin: 10px 0;
+            line-height: 1;
+            opacity: 0;
+            animation: zoomIn 1.2s ease forwards 1.8s;
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .ceremony {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            line-height: 1.4;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 2.1s;
+        }
+
+        /* ================= ORNAMEN BAWAH (GAPURA & BUNGA) ================= */
+        .bottom-ornament {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        /* Animasi Gapura Mengembang (Breathing) */
+        .gapura-left, .gapura-right {
+            position: absolute;
+            bottom: 0;
+            width: 45%;
+            animation: floatGapura 6s ease-in-out infinite;
+        }
+
+        .gapura-left {
+            left: -5%;
+            transform-origin: bottom left;
+        }
+
+        .gapura-right {
+            right: -5%;
+            transform-origin: bottom right;
+        }
+
+        @keyframes floatGapura {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.03) rotate(1deg); }
+        }
+
+        .flowers-bottom {
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            z-index: 20;
+        }
+
+        /* ================= TOMBOL & ANIMASI TAMBAHAN ================= */
+        .btn-open {
+            margin-top: 30px;
+            background-color: var(--gold);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(192, 155, 56, 0.4);
+            transition: all 0.3s ease;
+            z-index: 30;
+            position: relative;
+        }
+
+        .btn-open:hover {
+            background-color: #a8852f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(192, 155, 56, 0.6);
+        }
+
+        /* Efek Bunga Jatuh */
+        .petal {
+            position: absolute;
+            top: -20px;
+            background-color: #fff0f0;
+            border-radius: 50% 0 50% 50%;
+            box-shadow: inset 0 0 5px rgba(192, 155, 56, 0.2);
+            pointer-events: none;
+            z-index: 5;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
 
     </style>
 </head>
 <body>
 
-    <!-- HALAMAN PEMBUKA -->
-    <div id="cover">
-        <!-- Gambar Gunungan Wayang (SVG) yang diberi animasi melayang -->
-        <div class="gunungan-container">
-            <svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
-                <!-- Bingkai Gunungan -->
-                <path d="M100 10 C 150 50, 190 120, 160 230 C 120 240, 80 240, 40 230 C 10 120, 50 50, 100 10 Z" fill="none" stroke="#D4AF37" stroke-width="4"/>
-                <path d="M100 20 C 140 55, 175 120, 150 220 C 115 230, 85 230, 50 220 C 25 120, 60 55, 100 20 Z" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="5,5"/>
-                <!-- Ornamen Dalam -->
-                <circle cx="100" cy="110" r="40" fill="none" stroke="#D4AF37" stroke-width="2"/>
-                <path d="M100 70 L 120 110 L 100 150 L 80 110 Z" fill="#8b5a2b" stroke="#D4AF37" stroke-width="2"/>
-                <!-- Pohon / Kehidupan -->
-                <path d="M100 150 L 100 200 M 80 180 L 100 160 L 120 180 M 70 150 L 100 130 L 130 150" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"/>
-                <!-- Aksesoris -->
-                <circle cx="100" cy="110" r="5" fill="#D4AF37"/>
-                <path d="M60 230 L 140 230" stroke="#D4AF37" stroke-width="4"/>
-            </svg>
-        </div>
+    <div class="invitation-container">
         
-        <div class="cover-title">The Wedding Of</div>
-        <div class="cover-subtitle">Adi & Sri</div>
-        <button class="btn-open" onclick="openInvitation()">
-            Buka Undangan &#10022;
-        </button>
-    </div>
+        <!-- Ornamen Pojok Atas (Ganti src dengan gambar bunga Anda) -->
+        <img src="https://i.ibb.co/3s6yH4v/top-floral.png" alt="Top Floral" class="top-ornament" style="opacity: 0.9;">
 
-    <!-- KONTEN UTAMA -->
-    <div id="main-content">
-        
-        <div class="section">
-            <div class="bismillah">Bismillahirrahmanirrahim</div>
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan resepsi pernikahan putra-putri kami:</p>
-            
-            <h1 class="mempelai-name">Adi Prasetya</h1>
-            <p class="mempelai-parent">Putra dari Bapak H. Sutrisno & Ibu Hj. Wulan Sari</p>
-            
-            <div class="dan">&</div>
-            
-            <h1 class="mempelai-name">Sri Wahyuni</h1>
-            <p class="mempelai-parent">Putri dari Bapak H. Bambang & Ibu Hj. Kartika Dewi</p>
-        </div>
+        <!-- Garis Emas Melengkung -->
+        <div class="arch-border"></div>
 
-        <div class="batik-border"></div>
+        <div class="content">
+            <!-- Logo Bismillah (Ganti src jika perlu) -->
+            <img src="https://i.ibb.co/6PZq6Z2/bismillah-gold.png" alt="Bismillah" class="bismillah">
 
-        <div class="section">
-            <h2 class="event-title">Save The Date</h2>
-            <p style="margin-bottom: 20px;">Kami akan melangsungkan acara pada:</p>
+            <div class="together">Together With Their Families</div>
+
+            <!-- NAMA MEMPELAI (Font Cinzel) -->
+            <div class="names">
+                Aliyah Queenshena
+            </div>
             
-            <div class="event-card">
-                <h3 class="event-title" style="font-size: 1.2rem; border-bottom: none;">Akad Nikah</h3>
-                <div class="event-detail">
-                    <strong>Sabtu, 20 Desember 2026</strong><br>
-                    Pukul 08.00 - 10.00 WIB
-                </div>
+            <div class="and">AND</div>
+            
+            <div class="names">
+                Yuangga Bagaskara
             </div>
 
-            <div class="event-card">
-                <h3 class="event-title" style="font-size: 1.2rem; border-bottom: none;">Resepsi</h3>
-                <div class="event-detail">
-                    <strong>Sabtu, 20 Desember 2026</strong><br>
-                    Pukul 11.00 - 15.00 WIB<br><br>
-                    Pendopo Agung Karanganyar<br>
-                    Jl. Raya Solo - Tawangmangu
-                </div>
-                <a href="https://maps.google.com" target="_blank" class="btn-maps">Buka Google Maps</a>
+            <div class="request">
+                Request The Honor Of<br>Your Presence Of Their
             </div>
 
-            <div class="countdown" id="countdown">
-                <div class="countdown-box"><span id="days">00</span><p>Hari</p></div>
-                <div class="countdown-box"><span id="hours">00</span><p>Jam</p></div>
-                <div class="countdown-box"><span id="minutes">00</span><p>Menit</p></div>
-                <div class="countdown-box"><span id="seconds">00</span><p>Detik</p></div>
+            <!-- Tulisan Wedding (Font Great Vibes) -->
+            <div class="wedding-text">Wedding</div>
+
+            <div class="ceremony">
+                Ceremony<br>Insyaallah
             </div>
+
+            <button class="btn-open" onclick="alert('Ini adalah demo tombol. Di sini Anda bisa mengarahkan ke halaman utama undangan.')">Buka Undangan</button>
         </div>
 
-        <div class="batik-border"></div>
-
-        <div class="section">
-            <h2 class="event-title">Ucapan & Doa</h2>
-            <p style="margin-bottom: 20px; font-size: 0.9rem;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+        <!-- Ornamen Bawah: Gapura Emas -->
+        <div class="bottom-ornament">
+            <img src="https://i.ibb.co/0yH1Xqz/gapura-left.png" alt="Gapura Kiri" class="gapura-left">
+            <img src="https://i.ibb.co/0yH1Xqz/gapura-right.png" alt="Gapura Kanan" class="gapura-right">
             
-            <textarea placeholder="Tulis ucapan & doa di sini..." style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ccc; font-family: 'Poppins'; resize: vertical; height: 100px; margin-bottom: 10px;"></textarea>
-            <button onclick="alert('Terima kasih atas doa dan ucapannya!')" style="background: var(--gold); color: var(--dark-brown); border: none; padding: 12px 25px; border-radius: 25px; font-weight: 600; cursor: pointer; width: 100%;">Kirim Ucapan</button>
-        </div>
-
-        <div style="text-align: center; padding: 20px; font-size: 0.8rem; color: #999;">
-            <p>Terima Kasih</p>
-            <p style="font-family: 'Great Vibes'; font-size: 2rem; color: var(--dark-brown); margin-top: 10px;">Adi & Sri</p>
+            <!-- Ornamen Bunga Bawah -->
+            <img src="https://i.ibb.co/5Wk5Z1b/bottom-floral.png" alt="Bottom Floral" class="flowers-bottom">
         </div>
 
     </div>
 
     <script>
-        // Fungsi Buka Undangan
-        function openInvitation() {
-            const cover = document.getElementById('cover');
-            const mainContent = document.getElementById('main-content');
+        // Script untuk membuat efek kelopak bunga jatuh (opsional)
+        function createPetal() {
+            const container = document.querySelector('.invitation-container');
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
             
-            // Efek geser ke atas
-            cover.style.transform = 'translateY(-100vh)';
+            // Random size, position, and animation duration
+            const size = Math.random() * 8 + 6;
+            petal.style.width = size + 'px';
+            petal.style.height = size + 'px';
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.animationDuration = (Math.random() * 3 + 4) + 's';
             
-            setTimeout(() => {
-                cover.style.display = 'none';
-                mainContent.style.display = 'block';
-                document.body.style.backgroundColor = 'var(--cream)';
-                window.scrollTo(0, 0);
-                
-                // Mulai animasi bunga setelah undangan dibuka
-                startFlowers();
-            }, 1000);
-        }
-
-        // Efek Bunga Melati Jatuh
-        function createFlower() {
-            const flower = document.createElement('div');
-            flower.classList.add('flower');
-            flower.innerHTML = '🌸'; // Bisa diganti dengan gambar melati jika ada
-            flower.style.left = Math.random() * 100 + 'vw';
-            flower.style.animationDuration = Math.random() * 3 + 4 + 's'; // 4-7 detik
-            flower.style.opacity = Math.random() * 0.5 + 0.5;
-            flower.style.fontSize = Math.random() * 15 + 15 + 'px';
-            
-            document.body.appendChild(flower);
+            container.appendChild(petal);
             
             setTimeout(() => {
-                flower.remove();
+                petal.remove();
             }, 7000);
         }
 
-        function startFlowers() {
-            setInterval(createFlower, 400); // Muncul setiap 0.4 detik
-        }
-
-        // Hitung Mundur
-        const targetDate = new Date("Dec 20, 2026 08:00:00").getTime();
-        
-        const x = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "<p style='color:var(--dark-brown); font-weight:bold;'>Acara Sedang Berlangsung!</p>";
-            }
-        }, 1000);
+        // Mulai hujan kelopak setiap 800ms
+        setInterval(createPetal, 800);
     </script>
+
 </body>
 </html>
