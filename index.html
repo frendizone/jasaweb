@@ -3,574 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRDigital - Jasa Pembuatan Website, Aplikasi & Layanan IT</title>
-    <meta name="description" content="Jasa pembuatan website, landing page, aplikasi mobile, dan layanan IT profesional. Desain modern, cepat, SEO friendly, dan bergaransi.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpg" href="logo-frdigital.jpg">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>Undangan Pernikahan Jawa - Adi & Sri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* ================= VARIABEL WARNA ================= */
         :root {
-            --primary: #0F172A;      /* Deep Navy */
-            --secondary: #2563EB;    /* Electric Blue */
-            --secondary-hover: #1D4ED8;
-            --accent: #F59E0B;       /* Gold */
-            --bg-light: #F8FAFC;     
-            --bg-white: #FFFFFF;
-            --text-dark: #1E293B;
-            --text-muted: #64748B;
-            --wa-green: #25D366;
-            --font-main: 'Poppins', sans-serif;
+            --gold: #D4AF37;
+            --dark-brown: #3b2818;
+            --light-brown: #8b5a2b;
+            --cream: #fdfbf7;
+            --text-dark: #2c1e12;
         }
 
-        /* ================= RESET & BASE ================= */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
 
         body {
-            font-family: var(--font-main);
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-brown);
+            color: var(--cream);
             overflow-x: hidden;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-        /* ================= NAVBAR ================= */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        nav .container { display: flex; justify-content: space-between; align-items: center; }
-        
-        .logo { 
-            font-size: 24px; 
-            font-weight: 800; 
-            color: var(--primary); 
-            text-decoration: none; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-        }
-        .logo img { height: 40px; width: auto; }
-        .logo span { color: var(--secondary); }
-
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 15px; transition: color 0.3s; }
-        nav ul li a:hover { color: var(--secondary); }
-
-        .btn-nav { background: var(--secondary); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; white-space: nowrap; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2); }
-        .btn-nav:hover { background: var(--secondary-hover); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3); }
-
-        /* ================= HERO SECTION ================= */
-        .hero { padding: 100px 20px 80px; background: linear-gradient(135deg, #F0F4FF 0%, #FFFFFF 100%); text-align: center; }
-        .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.2; color: var(--primary); margin-bottom: 20px; }
-        .hero h1 span { color: var(--secondary); }
-        .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
-        .hero-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn-primary { background: var(--secondary); color: white; padding: 16px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: 0.3s; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); }
-        .btn-primary:hover { background: var(--secondary-hover); transform: translateY(-3px); box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3); }
-        .btn-outline { background: transparent; color: var(--primary); padding: 16px 36px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; border: 2px solid var(--primary); transition: 0.3s; }
-        .btn-outline:hover { background: var(--primary); color: white; }
-
-        /* ================= LAYANAN (UPDATE KATEGORI) ================= */
-        section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 36px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
-        .section-title p { color: var(--text-muted); font-size: 16px; }
-
-        .layanan-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
-            gap: 40px; 
-            align-items: stretch;
-        }
-        
-        .layanan-card { 
-            background: var(--bg-white); 
-            border-radius: 20px; 
-            padding: 40px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            border: 1px solid #E2E8F0; 
-            transition: 0.3s; 
-            position: relative; 
-            overflow: hidden;
+        /* ================= HALAMAN PEMBUKA (COVER) ================= */
+        #cover {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(rgba(59, 40, 24, 0.8), rgba(59, 40, 24, 0.95)), url('https://images.unsplash.com/photo-1620503374956-c942862f0372?q=80&w=1000&auto=format&fit=crop') center/cover;
+            z-index: 9999;
             display: flex;
             flex-direction: column;
-        }
-        .layanan-card:hover { 
-            transform: translateY(-10px); 
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1); 
-            border-color: var(--secondary); 
-        }
-        .layanan-card::before { 
-            content: ''; 
-            position: absolute; 
-            top: 0; left: 0; width: 100%; height: 5px; 
-            background: var(--secondary); 
-            opacity: 0; 
-            transition: 0.3s; 
-        }
-        .layanan-card:hover::before { opacity: 1; }
-
-        .layanan-icon { 
-            font-size: 48px; 
-            margin-bottom: 20px; 
-            background: #F0F4FF;
-            width: 80px; height: 80px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 16px;
-        }
-        .layanan-card h3 { font-size: 24px; font-weight: 800; color: var(--primary); margin-bottom: 15px; }
-        .layanan-desc { color: var(--text-muted); font-size: 15px; margin-bottom: 25px; }
-        
-        .sub-layanan-list { list-style: none; margin-bottom: 30px; flex-grow: 1; }
-        .sub-layanan-list li { 
-            font-size: 15px; 
-            color: var(--text-dark); 
-            padding: 10px 0; 
-            border-bottom: 1px dashed #E2E8F0;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-        .sub-layanan-list li:last-child { border-bottom: none; }
-        .sub-layanan-list li span { color: var(--secondary); font-weight: bold; }
-        
-        .btn-layanan {
-            display: inline-block;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            background: #F1F5F9;
-            color: var(--primary);
-            padding: 12px 24px;
-            border-radius: 8px;
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        /* Animasi Gunungan Wayang */
+        .gunungan-container {
+            width: 250px;
+            height: 250px;
+            margin-bottom: 20px;
+            animation: floatGunungan 4s ease-in-out infinite;
+            filter: drop-shadow(0 10px 15px rgba(212, 175, 55, 0.4));
+        }
+
+        @keyframes floatGunungan {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        .cover-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 0.5s;
+        }
+
+        .cover-subtitle {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 1s;
+        }
+
+        .btn-open {
+            background-color: var(--gold);
+            color: var(--dark-brown);
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            transition: 0.3s;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards 1.5s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-open:hover { transform: scale(1.05); background-color: #e5c35b; }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        /* ================= KONTEN UTAMA ================= */
+        #main-content {
+            display: none;
+            background: var(--cream);
+            color: var(--text-dark);
+            padding-bottom: 50px;
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .batik-border {
+            height: 20px;
+            background: repeating-linear-gradient(45deg, var(--gold), var(--gold) 10px, var(--dark-brown) 10px, var(--dark-brown) 20px);
+            margin: 40px 0;
+            opacity: 0.3;
+        }
+
+        /* Mempelai */
+        .bismillah {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--light-brown);
+        }
+
+        .mempelai-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--dark-brown);
+            margin: 10px 0;
+        }
+
+        .dan {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin: 15px 0;
+        }
+
+        .mempelai-parent {
+            font-size: 0.9rem;
+            color: #666;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Acara */
+        .event-card {
+            background: white;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .event-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .event-detail { font-size: 1rem; margin-bottom: 10px; line-height: 1.6; }
+        .event-detail strong { color: var(--light-brown); }
+
+        /* Countdown */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .countdown-box {
+            background: var(--dark-brown);
+            color: var(--gold);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 70px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .countdown-box span { display: block; font-size: 1.5rem; font-weight: 700; }
+        .countdown-box p { font-size: 0.8rem; text-transform: uppercase; color: var(--cream); margin-top: 5px; }
+
+        /* Animasi Bunga Jatuh */
+        .flower {
+            position: fixed;
+            top: -50px;
+            font-size: 24px;
+            z-index: 10;
+            animation: fall linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        /* Tombol Maps */
+        .btn-maps {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-brown);
+            padding: 12px 25px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
+            margin-top: 15px;
             transition: 0.3s;
         }
-        .btn-layanan:hover { background: var(--secondary); color: white; }
+        .btn-maps:hover { background: var(--light-brown); color: white; }
 
-        /* ================= KENAPA KAMI ================= */
-        .bg-primary { background: var(--primary); color: white; }
-        .bg-primary .section-title h2 { color: white; }
-        .bg-primary .section-title p { color: #94A3B8; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
-        .feature-item { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
-        .feature-item h4 { color: var(--accent); font-size: 18px; margin-bottom: 10px; }
-        .feature-item p { color: #CBD5E1; font-size: 14px; }
-
-        /* ================= PORTOFOLIO ================= */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .portfolio-card { position: relative; border-radius: 16px; overflow: hidden; height: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); cursor: pointer; background: #000; }
-        .portfolio-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); opacity: 0.9; }
-        .portfolio-card:hover img { transform: scale(1.15); opacity: 1; }
-        .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 50%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; color: white; }
-        .portfolio-tag { background: var(--secondary); color: white; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 50px; align-self: flex-start; margin-bottom: 10px; transform: translateY(10px); opacity: 0; transition: all 0.4s ease; }
-        .portfolio-title { font-size: 22px; font-weight: 700; margin-bottom: 5px; transform: translateY(10px); transition: all 0.4s ease; }
-        .portfolio-desc { font-size: 14px; color: #CBD5E1; margin-bottom: 15px; transform: translateY(10px); transition: all 0.4s ease 0.1s; }
-        .btn-view { display: inline-block; background: white; color: var(--primary); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; align-self: flex-start; transform: translateY(20px); opacity: 0; transition: all 0.4s ease 0.2s; }
-        .btn-view:hover { background: var(--secondary); color: white; }
-        .portfolio-card:hover .portfolio-tag, .portfolio-card:hover .portfolio-title, .portfolio-card:hover .portfolio-desc { transform: translateY(0); opacity: 1; }
-        .portfolio-card:hover .btn-view { transform: translateY(0); opacity: 1; }
-
-        /* ================= ALUR KERJA ================= */
-        .step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
-        .step-item { position: relative; padding: 20px; }
-        .step-number { width: 50px; height: 50px; background: var(--secondary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; margin: 0 auto 15px; }
-        .step-item h4 { font-size: 18px; color: var(--primary); margin-bottom: 8px; }
-        .step-item p { font-size: 14px; color: var(--text-muted); }
-
-        /* ================= PRICELIST ================= */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center; }
-        .pricing-card { background: var(--bg-white); padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 2px solid transparent; transition: 0.3s; position: relative; }
-        .pricing-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-        .pricing-card.populer { border-color: var(--secondary); box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15); transform: scale(1.05); z-index: 10; }
-        .badge-populer { background: var(--accent); color: var(--primary); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); padding: 5px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; }
-        .pricing-card h3 { font-size: 22px; color: var(--text-muted); font-weight: 600; margin-bottom: 15px; }
-        
-        .price-custom { font-size: 32px; font-weight: 800; color: var(--secondary); margin-bottom: 5px; }
-        .price-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 25px; height: 40px; }
-        
-        .pricing-list { list-style: none; text-align: left; margin-bottom: 30px; border-top: 1px solid #E2E8F0; padding-top: 25px; }
-        .pricing-list li { padding: 8px 0; font-size: 15px; color: var(--text-dark); display: flex; gap: 10px; }
-        .pricing-list li::before { content: "✓"; color: var(--secondary); font-weight: bold; }
-        .btn-pricing { display: block; width: 100%; padding: 14px; background: #E2E8F0; color: var(--primary); text-decoration: none; border-radius: 8px; font-weight: 700; transition: 0.3s; }
-        .btn-pricing:hover { background: var(--primary); color: white; }
-        .pricing-card.populer .btn-pricing { background: var(--secondary); color: white; }
-        .pricing-card.populer .btn-pricing:hover { background: var(--secondary-hover); }
-
-        /* Garansi Badge di bawah Harga */
-        .guarantee-badge { margin-top: 40px; display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--text-muted); font-size: 14px; background: #F1F5F9; padding: 15px; border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; }
-        .guarantee-badge span { font-size: 24px; flex-shrink: 0; }
-
-        /* ================= FAQ ================= */
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { background: var(--bg-white); border-radius: 12px; margin-bottom: 15px; padding: 20px 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #E2E8F0; transition: 0.3s; cursor: pointer; }
-        .faq-item:hover { border-color: var(--secondary); box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1); }
-        .faq-item h4 { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
-        .faq-item p { color: var(--text-muted); font-size: 15px; }
-
-        /* ================= FOOTER ================= */
-        footer { background: var(--primary); color: #94A3B8; padding: 60px 20px 30px; border-top: 1px solid rgba(255,255,255,0.1); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
-        .footer-col h4 { color: white; font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;}
-        .footer-col h4 img { height: 30px; width: auto; filter: brightness(0) invert(1); } /* Membuat logo jadi putih */
-        .footer-col p, .footer-col a { display: block; color: #94A3B8; text-decoration: none; margin-bottom: 10px; font-size: 14px; transition: 0.3s; }
-        .footer-col a:hover { color: var(--accent); }
-        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; }
-        
-        /* ================= FLOATING WHATSAPP + TEXT ================= */
-        .float-wa { position: fixed; bottom: 30px; right: 30px; background: var(--wa-green); color: white; padding: 12px 20px; border-radius: 50px; display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); text-decoration: none; z-index: 999; transition: transform 0.3s; }
-        .float-wa:hover { transform: scale(1.05) translateY(-5px); }
-        .float-wa span { font-size: 24px; }
-
-        /* ================= BACK TO TOP ================= */
-        .back-to-top { position: fixed; bottom: 30px; left: 30px; background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; text-decoration: none; z-index: 999; opacity: 0.7; transition: 0.3s; }
-        .back-to-top:hover { opacity: 1; transform: translateY(-5px); }
-
-        /* ================= RESPONSIVE (MOBILE) ================= */
-        @media (max-width: 768px) {
-            .container { padding: 0 16px; }
-            nav ul { display: none; }
-            .btn-nav { padding: 8px 14px; font-size: 12px; border-radius: 6px; }
-            .logo { font-size: 20px; }
-            .logo img { height: 32px; }
-            
-            .hero { padding: 60px 16px; }
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 15px; }
-            .hero-buttons { flex-direction: column; gap: 10px; }
-            .btn-primary, .btn-outline { padding: 14px 20px; font-size: 14px; width: 100%; }
-            
-            .layanan-grid { grid-template-columns: 1fr; gap: 20px; }
-            .layanan-card { padding: 30px 20px; }
-            
-            .section-title h2 { font-size: 28px; }
-            .pricing-card.populer { transform: scale(1); }
-            
-            /* Portofolio Mobile */
-            .portfolio-tag, .portfolio-title, .portfolio-desc, .btn-view { transform: translateY(0) !important; opacity: 1 !important; }
-            
-            /* Floating WA Mobile */
-            .float-wa { padding: 10px; border-radius: 50%; bottom: 20px; right: 20px; }
-            .float-wa span { font-size: 28px; }
-            .float-wa .wa-text { display: none; }
-            
-            .back-to-top { bottom: 20px; left: 20px; width: 40px; height: 40px; font-size: 18px; }
-        }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">
-                <!-- Logo Gambar -->
-                <img src="logo-frdigital.png" alt="Logo FRDigital">
-                <span>FRDigital.</span>
-            </a>
-            <ul>
-                <li><a href="#layanan">Layanan</a></li>
-                <li><a href="#portofolio">Portofolio</a></li>
-                <li><a href="#harga">Harga</a></li>
-                <li><a href="#faq">FAQ</a></li>
-            </ul>
-            <a href="https://wa.me/6281225309301" class="btn-nav">Konsultasi Gratis</a>
+    <!-- HALAMAN PEMBUKA -->
+    <div id="cover">
+        <!-- Gambar Gunungan Wayang (SVG) yang diberi animasi melayang -->
+        <div class="gunungan-container">
+            <svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+                <!-- Bingkai Gunungan -->
+                <path d="M100 10 C 150 50, 190 120, 160 230 C 120 240, 80 240, 40 230 C 10 120, 50 50, 100 10 Z" fill="none" stroke="#D4AF37" stroke-width="4"/>
+                <path d="M100 20 C 140 55, 175 120, 150 220 C 115 230, 85 230, 50 220 C 25 120, 60 55, 100 20 Z" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="5,5"/>
+                <!-- Ornamen Dalam -->
+                <circle cx="100" cy="110" r="40" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                <path d="M100 70 L 120 110 L 100 150 L 80 110 Z" fill="#8b5a2b" stroke="#D4AF37" stroke-width="2"/>
+                <!-- Pohon / Kehidupan -->
+                <path d="M100 150 L 100 200 M 80 180 L 100 160 L 120 180 M 70 150 L 100 130 L 130 150" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"/>
+                <!-- Aksesoris -->
+                <circle cx="100" cy="110" r="5" fill="#D4AF37"/>
+                <path d="M60 230 L 140 230" stroke="#D4AF37" stroke-width="4"/>
+            </svg>
         </div>
-    </nav>
+        
+        <div class="cover-title">The Wedding Of</div>
+        <div class="cover-subtitle">Adi & Sri</div>
+        <button class="btn-open" onclick="openInvitation()">
+            Buka Undangan &#10022;
+        </button>
+    </div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container">
-            <h1>Wujudkan Ide Bisnis Anda Menjadi <span>Kenyataan Digital</span></h1>
-            <p>Tingkatkan penjualan dengan Landing Page yang menjual, bangun kredibilitas lewat Website profesional, dan permudah operasional dengan Aplikasi custom serta Layanan IT terpercaya.</p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/6281225309301?text=Halo,%20saya%20ingin%20konsultasi%20mengenai%20kebutuhan%20digital%20bisnis%20saya" class="btn-primary">Konsultasi Gratis</a>
-                <a href="#layanan" class="btn-outline">Lihat Semua Layanan</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- LAYANAN (UPDATE KATEGORI) -->
-    <section id="layanan">
-        <div class="container">
-            <div class="section-title">
-                <h2>Layanan Kami</h2>
-                <p>Solusi digital lengkap dan terintegrasi untuk kebutuhan bisnis Anda</p>
-            </div>
+    <!-- KONTEN UTAMA -->
+    <div id="main-content">
+        
+        <div class="section">
+            <div class="bismillah">Bismillahirrahmanirrahim</div>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan resepsi pernikahan putra-putri kami:</p>
             
-            <div class="layanan-grid">
-                
-                <!-- KATEGORI 1: WEBSITE -->
-                <div class="layanan-card">
-                    <div class="layanan-icon">💻</div>
-                    <h3>Web Development</h3>
-                    <p class="layanan-desc">Pembuatan website profesional yang berfokus pada performa, kecepatan, dan konversi penjualan.</p>
-                    
-                    <ul class="sub-layanan-list">
-                        <li><span>✓</span> <strong>Landing Page:</strong> Halaman promosi fokus penjualan.</li>
-                        <li><span>✓</span> <strong>Company Profile:</strong> Website profil untuk kredibilitas bisnis.</li>
-                        <li><span>✓</span> <strong>Toko Online:</strong> E-commerce lengkap dengan keranjang & pembayaran.</li>
-                        <li><span>✓</span> <strong>Web Custom:</strong> Sistem informasi, portal berita, atau dashboard.</li>
-                    </ul>
-
-                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20tertarik%20dengan%20layanan%20Web%20Development" class="btn-layanan">Tanya Layanan Web</a>
-                </div>
-
-                <!-- KATEGORI 2: APLIKASI -->
-                <div class="layanan-card">
-                    <div class="layanan-icon">📱</div>
-                    <h3>App Development</h3>
-                    <p class="layanan-desc">Pembuatan aplikasi mobile (Android & iOS) yang memudahkan operasional dan pelanggan Anda.</p>
-                    
-                    <ul class="sub-layanan-list">
-                        <li><span>✓</span> <strong>Aplikasi Ritel / Kasir (POS):</strong> Manajemen stok & transaksi toko.</li>
-                        <li><span>✓</span> <strong>Aplikasi F&B:</strong> Sistem pesan antar, katalog menu, & reservasi kafe.</li>
-                        <li><span>✓</span> <strong>Aplikasi Laundry:</strong> Pelacakan status cucian & antar-jemput.</li>
-                        <li><span>✓</span> <strong>Custom App:</strong> Aplikasi khusus sesuai alur bisnis Anda.</li>
-                    </ul>
-
-                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20tertarik%20dengan%20layanan%20Pembuatan%20Aplikasi" class="btn-layanan">Tanya Layanan App</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- KENAPA KAMI -->
-    <section class="bg-primary">
-        <div class="container">
-            <div class="section-title">
-                <h2>Kenapa Memilih FRDigital?</h2>
-                <p>Kami tidak sekadar membuat website/aplikasi, kami membangun aset bisnis Anda.</p>
-            </div>
-            <div class="grid-4">
-                <div class="feature-item">
-                    <h4>⚡ Super Cepat</h4>
-                    <p>Sistem dan website dioptimalkan agar loading di bawah 3 detik, meningkatkan pengalaman pengguna.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>📱 Responsif</h4>
-                    <p>Tampilan sempurna di semua perangkat, mulai dari HP, tablet, hingga desktop.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>🔍 SEO Friendly</h4>
-                    <p>Struktur kode bersih yang memudahkan website Anda muncul di halaman pertama Google.</p>
-                </div>
-                <div class="feature-item">
-                    <h4>🛡️ Garansi Support</h4>
-                    <p>Bebas revisi desain dan dukungan teknis (support) gratis selama masa garansi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PORTOFOLIO -->
-    <section id="portofolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Portofolio Kami</h2>
-                <p>Beberapa project unggulan yang telah kami kerjakan</p>
-            </div>
-            <div class="portfolio-grid">
-                
-                <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Landing Page Toko Batik">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Web Development</span>
-                        <h4 class="portfolio-title">Toko Batik Nusantara</h4>
-                        <p class="portfolio-desc">Landing page penjualan batik premium dengan konversi tinggi.</p>
-                        <a href="#" class="btn-view">Lihat Detail</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Company Profile Startup">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-tag">Web Development</span>
-                        <h4 class="portfolio-title">Tech Startup Indonesia</h4>
-                        <p class="portfolio-desc">Website profil perusahaan teknologi dengan desain futuristik.</p>
-                        <a href="#" class="btn-view">Lihat Detail</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?q=80&w=800&auto=format&fit=crop" alt="Website Klinik">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-tag">App Development</span>
-                        <h4 class="portfolio-title">Klinik Kecantikan Glow</h4>
-                        <p class="portfolio-desc">Aplikasi mobile booking dokter dan profil klinik yang modern.</p>
-                        <a href="#" class="btn-view">Lihat Detail</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ALUR KERJA -->
-    <section style="background: var(--bg-white);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Alur Kerja Sederhana</h2>
-                <p>Hanya butuh 3 langkah mudah untuk project Anda live!</p>
-            </div>
-            <div class="step-grid">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h4>Konsultasi</h4>
-                    <p>Diskusikan kebutuhan bisnis dan referensi desain yang Anda inginkan secara gratis.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h4>Proses Desain</h4>
-                    <p>Kami membuat website/aplikasi sesuai kesepakatan dalam waktu yang efisien.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h4>Launching</h4>
-                    <p>Website/aplikasi siap diakses publik setelah Anda menyetujui hasil akhirnya.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HARGA -->
-    <section id="harga">
-        <div class="container">
-            <div class="section-title">
-                <h2>Pilihan Paket Layanan</h2>
-                <p>Hubungi admin kami untuk mendapatkan penawaran harga terbaik sesuai kebutuhan Anda</p>
-            </div>
-            <div class="pricing-grid">
-                
-                <div class="pricing-card">
-                    <h3>Landing Page</h3>
-                    <div class="price-custom">Hubungi Admin</div>
-                    <p class="price-desc">Cocok untuk promosi produk tunggal</p>
-                    <ul class="pricing-list">
-                        <li>1 Halaman Fokus Penjualan</li>
-                        <li>Desain Responsif (HP & PC)</li>
-                        <li>Tombol Direct WhatsApp</li>
-                        <li>Gratis Domain (.my.id) 1 Thn</li>
-                        <li>Gratis Hosting 1 Thn</li>
-                    </ul>
-                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20ingin%20tanya%20harga%20paket%20Landing%20Page" class="btn-pricing">Tanya Harga</a>
-                </div>
-
-                <div class="pricing-card populer">
-                    <div class="badge-populer">PALING LAKU</div>
-                    <h3>Company Profile</h3>
-                    <div class="price-custom">Hubungi Admin</div>
-                    <p class="price-desc">Untuk kredibilitas bisnis & perusahaan</p>
-                    <ul class="pricing-list">
-                        <li>5 - 7 Halaman Lengkap</li>
-                        <li>Desain Custom Premium</li>
-                        <li>Optimasi SEO Google</li>
-                        <li>Gratis Domain (.com) 1 Thn</li>
-                        <li>Gratis Hosting 1 Thn</li>
-                        <li>Support 30 Hari</li>
-                    </ul>
-                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20ingin%20tanya%20harga%20paket%20Company%20Profile" class="btn-pricing">Tanya Harga</a>
-                </div>
-
-                <div class="pricing-card">
-                    <h3>Aplikasi Custom</h3>
-                    <div class="price-custom">Hubungi Admin</div>
-                    <p class="price-desc">Sistem operasional (POS, Laundry, F&B)</p>
-                    <ul class="pricing-list">
-                        <li>Aplikasi Android / iOS</li>
-                        <li>Panel Admin (Web Dashboard)</li>
-                        <li>Desain UI/UX Modern</li>
-                        <li>Gratis Hosting Server 1 Thn</li>
-                        <li>Support & Maintenance 60 Hari</li>
-                    </ul>
-                    <a href="https://wa.me/6281225309301?text=Halo,%20saya%20ingin%20tanya%20harga%20pembuatan%20Aplikasi" class="btn-pricing">Tanya Harga</a>
-                </div>
-
-            </div>
+            <h1 class="mempelai-name">Adi Prasetya</h1>
+            <p class="mempelai-parent">Putra dari Bapak H. Sutrisno & Ibu Hj. Wulan Sari</p>
             
-            <div class="guarantee-badge">
-                <span>🛡️</span>
-                <div><strong>Garansi 100% Uang Kembali</strong> jika kami tidak menyelesaikan project sesuai kesepakatan awal.</div>
-            </div>
+            <div class="dan">&</div>
+            
+            <h1 class="mempelai-name">Sri Wahyuni</h1>
+            <p class="mempelai-parent">Putri dari Bapak H. Bambang & Ibu Hj. Kartika Dewi</p>
         </div>
-    </section>
 
-    <!-- FAQ -->
-    <section id="faq" style="background: var(--bg-white);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Pertanyaan Umum (FAQ)</h2>
-                <p>Masih ragu? Temukan jawabannya di sini.</p>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <h4>Berapa lama proses pembuatannya? <span>+</span></h4>
-                    <p>Untuk Landing Page biasanya 2-3 hari kerja. Untuk Company Profile sekitar 7-14 hari. Untuk Aplikasi custom bisa memakan waktu 1-3 bulan tergantung kompleksitas fitur.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>Apakah saya bisa request desain sendiri? <span>+</span></h4>
-                    <p>Tentu! Kami menyediakan layanan desain custom. Anda bisa memberikan referensi website/aplikasi yang Anda sukai, dan kami akan menyesuaikannya.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>Bagaimana sistem pembayarannya? <span>+</span></h4>
-                    <p>Pembayaran dilakukan 2 tahap: DP 50% saat sepakat, dan pelunasan 50% saat project selesai dan siap diluncurkan.</p>
+        <div class="batik-border"></div>
+
+        <div class="section">
+            <h2 class="event-title">Save The Date</h2>
+            <p style="margin-bottom: 20px;">Kami akan melangsungkan acara pada:</p>
+            
+            <div class="event-card">
+                <h3 class="event-title" style="font-size: 1.2rem; border-bottom: none;">Akad Nikah</h3>
+                <div class="event-detail">
+                    <strong>Sabtu, 20 Desember 2026</strong><br>
+                    Pukul 08.00 - 10.00 WIB
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>
-                    <img src="logo-frdigital.png" alt="Logo FRDigital">
-                    FRDigital.
-                </h4>
-                <p>Agensi digital yang berfokus pada pembuatan website, aplikasi, dan solusi IT untuk pertumbuhan bisnis Anda.</p>
+            <div class="event-card">
+                <h3 class="event-title" style="font-size: 1.2rem; border-bottom: none;">Resepsi</h3>
+                <div class="event-detail">
+                    <strong>Sabtu, 20 Desember 2026</strong><br>
+                    Pukul 11.00 - 15.00 WIB<br><br>
+                    Pendopo Agung Karanganyar<br>
+                    Jl. Raya Solo - Tawangmangu
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="btn-maps">Buka Google Maps</a>
             </div>
-            <div class="footer-col">
-                <h4>Layanan</h4>
-                <a href="#layanan">Web Development</a>
-                <a href="#layanan">App Development</a>
-                <a href="#layanan">Layanan IT</a>
-                <a href="#layanan">Maintenance</a>
-            </div>
-            <div class="footer-col">
-                <h4>Hubungi Kami</h4>
-                <a href="https://wa.me/6281225309301">WhatsApp: 0812-2530-9301</a>
-                <a href="mailto:frendizone@gmail.com">Email: frendizone@gmail.com</a>
-                <p>Surakarta, Indonesia</p>
+
+            <div class="countdown" id="countdown">
+                <div class="countdown-box"><span id="days">00</span><p>Hari</p></div>
+                <div class="countdown-box"><span id="hours">00</span><p>Jam</p></div>
+                <div class="countdown-box"><span id="minutes">00</span><p>Menit</p></div>
+                <div class="countdown-box"><span id="seconds">00</span><p>Detik</p></div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 FRDigital. All rights reserved.</p>
+
+        <div class="batik-border"></div>
+
+        <div class="section">
+            <h2 class="event-title">Ucapan & Doa</h2>
+            <p style="margin-bottom: 20px; font-size: 0.9rem;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+            
+            <textarea placeholder="Tulis ucapan & doa di sini..." style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ccc; font-family: 'Poppins'; resize: vertical; height: 100px; margin-bottom: 10px;"></textarea>
+            <button onclick="alert('Terima kasih atas doa dan ucapannya!')" style="background: var(--gold); color: var(--dark-brown); border: none; padding: 12px 25px; border-radius: 25px; font-weight: 600; cursor: pointer; width: 100%;">Kirim Ucapan</button>
         </div>
-    </footer>
 
-    <!-- FLOATING WHATSAPP DENGAN TEKS -->
-    <a href="https://wa.me/6281225309301" class="float-wa" title="Hubungi Kami">
-        <span>💬</span>
-        <div class="wa-text">Butuh Bantuan?</div>
-    </a>
+        <div style="text-align: center; padding: 20px; font-size: 0.8rem; color: #999;">
+            <p>Terima Kasih</p>
+            <p style="font-family: 'Great Vibes'; font-size: 2rem; color: var(--dark-brown); margin-top: 10px;">Adi & Sri</p>
+        </div>
 
-    <!-- BACK TO TOP -->
-    <a href="#" class="back-to-top" title="Kembali ke Atas">↑</a>
+    </div>
 
+    <script>
+        // Fungsi Buka Undangan
+        function openInvitation() {
+            const cover = document.getElementById('cover');
+            const mainContent = document.getElementById('main-content');
+            
+            // Efek geser ke atas
+            cover.style.transform = 'translateY(-100vh)';
+            
+            setTimeout(() => {
+                cover.style.display = 'none';
+                mainContent.style.display = 'block';
+                document.body.style.backgroundColor = 'var(--cream)';
+                window.scrollTo(0, 0);
+                
+                // Mulai animasi bunga setelah undangan dibuka
+                startFlowers();
+            }, 1000);
+        }
+
+        // Efek Bunga Melati Jatuh
+        function createFlower() {
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+            flower.innerHTML = '🌸'; // Bisa diganti dengan gambar melati jika ada
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = Math.random() * 3 + 4 + 's'; // 4-7 detik
+            flower.style.opacity = Math.random() * 0.5 + 0.5;
+            flower.style.fontSize = Math.random() * 15 + 15 + 'px';
+            
+            document.body.appendChild(flower);
+            
+            setTimeout(() => {
+                flower.remove();
+            }, 7000);
+        }
+
+        function startFlowers() {
+            setInterval(createFlower, 400); // Muncul setiap 0.4 detik
+        }
+
+        // Hitung Mundur
+        const targetDate = new Date("Dec 20, 2026 08:00:00").getTime();
+        
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<p style='color:var(--dark-brown); font-weight:bold;'>Acara Sedang Berlangsung!</p>";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
